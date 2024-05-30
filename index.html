@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>KEYBOARDSMASH</title>
+		<style>
+			body {
+				background-color: black;
+			}
+			#mainCanvas {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="mainCanvas" tabindex=1 width=1200px height=700px></canvas>
+		
+		<input id="tester" tabindex = 1 width=100px value = 1 hidden=true>
+		
+		<script>
+			const canvas = document.getElementById("mainCanvas");
+			const ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#FFFFFF"; ctx.font = "50px serif";
+			ctx.fillText("Loading...", 0, canvas.height / 2);
+		</script>
+		
+		<audio id="linnea" preload="auto">
+			<source src="SongFiles/linnea.mp3" type="audio/mpeg">
+		</audio>
+		
+		<audio id="Sunny_Day" preload="auto">
+			<source src="SongFiles/Sunny_Day.mp3" type="audio/mpeg">
+		</audio>
+		
+		<audio id="Field_of_Memories" preload="auto">
+			<source src="SongFiles/Field_of_Memories.mp3" type="audio/mpeg">
+		</audio>
+		
+		<audio id="My_Time" preload="auto">
+			<source src="SongFiles/My_Time.mp3" type="audio/mpeg">
+		</audio>
+		
+		<script src="index.js"></script>
+		<noscript>I am unsure how you got here. Your browser unfortunately does not support Javascript. </noscript>
+	</body>
+</html>
