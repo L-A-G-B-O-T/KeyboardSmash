@@ -1,0 +1,18 @@
+{
+	officialName : "linnea", 
+	songAuthor : "unknown", 
+	difficulty : "easy", 
+	settings : {
+		color1 : "#FF0000", 
+		color2 : "#FF0000", 
+		speed : 0.7, 
+		colorStyle : "horizontalGradient", 
+		textColor : "#FFFFFF", 
+		strokeColor : "#FFFFFF", 
+		glowColor : "#FFDDDD", 
+		msPerBeat : 300, 
+	}, 
+	keys : [
+		['m', 2, '#0000FF', 'blue'], ['.', 6, 'blue', 'blue'], ['j', 2], ['l', 6], ['u', 2, '#00FF00', '#00FF00'], ['o', 14, '#00FF00', '#00FF00'], ['z', 2, 'blue', 'blue'], ['c', 6, 'blue', 'blue'], ['a', 2], ['d', 6], ['q', 2, '#00FF00', '#00FF00'], ['e', 14, '#00FF00', '#00FF00'], ['z', 0, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['c', 0, 'blue', 'blue'], ['.', 2, 'blue', 'blue'], ['v', 4, 'blue', 'blue'], ['a', 0], ['j', 2], ['d', 0], ['l', 2], ['f', 4], ['q', 0, '#00FF00', '#00FF00'], ['u', 2, '#00FF00', '#00FF00'], ['e', 0, '#00FF00', '#00FF00'], ['o', 14, '#00FF00', '#00FF00'], ['z', 0, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['c', 0, 'blue', 'blue'], ['.', 2, 'blue', 'blue'], ['/', 4, 'blue', 'blue'], ['a', 0], ['j', 2], ['d', 0], ['l', 2], [';', 4], ['q', 0, '#00FF00', '#00FF00'], ['u', 2, '#00FF00', '#00FF00'], [' ', 0, 'blue', 'blue']
+	], 
+}

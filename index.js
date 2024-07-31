@@ -38,7 +38,9 @@ const keyboard = {
 	";" : false,
 	"," : false,
 	"." : false,
-	"/" : false
+	"/" : false, 
+	"1" : false,
+	"2" : false, 
 }
 
 const defaultLayout = [
@@ -60,47 +62,80 @@ const defaultSettings = {
 	glowColor : "#FFDDDD",
 	anticipateChar : true,
 	anticipateKey : false,
+	msPerBeat : 300,
 };
 
 const songs = { //a Song object is a list of a series of keys, each with a specified [character, duration, *color1, *color2, *speed,]
 	"linnea" : [
-		['m', 600, '#0000FF', 'blue'], 
-		['.', 1800, 'blue', 'blue'], 
-		['j', 600], 
-		['l', 1800], 
-		['u', 600, '#00FF00', '#00FF00'], 
-		['o', 4200, '#00FF00', '#00FF00'],
-		
-		['z', 600, 'blue', 'blue'], 
-		['c', 1800, 'blue', 'blue'], 
-		['a', 600], 
-		['d', 1800], 
-		['q', 600, '#00FF00', '#00FF00'], 
-		['e', 4200, '#00FF00', '#00FF00'],
-		
-		['z', 0, 'blue', 'blue'], ['m', 600, 'blue', 'blue'], 
-		['c', 0, 'blue', 'blue'], ['.', 600, 'blue', 'blue'], 
-		['v', 1200, 'blue', 'blue'], 
-		['a', 0], ['j', 600], 
-		['d', 0], ['l', 600], 
-		['f', 1200], 
-		['q', 0, '#00FF00', '#00FF00'], ['u', 600, '#00FF00', '#00FF00'], 
-		['e', 0, '#00FF00', '#00FF00'], ['o', 4200, '#00FF00', '#00FF00'], 
-		
-		['z', 0, 'blue', 'blue'], ['m', 600, 'blue', 'blue'], 
-		['c', 0, 'blue', 'blue'], ['.', 600, 'blue', 'blue'], 
-		['/', 1200, 'blue', 'blue'], 
-		['a', 0], ['j', 600], 
-		['d', 0], ['l', 600], 
-		[';', 1200], 
-		['q', 0, '#00FF00', '#00FF00'], ['u', 600, '#00FF00', '#00FF00'], 
-		[' ', 34200, 'blue', 'blue']
+	['m', 2, '#0000FF', 'blue'], ['.', 6, 'blue', 'blue'], ['j', 2], ['l', 6], ['u', 2, '#00FF00', '#00FF00'], ['o', 14, '#00FF00', '#00FF00'], ['z', 2, 'blue', 'blue'], ['c', 6, 'blue', 'blue'], ['a', 2], ['d', 6], ['q', 2, '#00FF00', '#00FF00'], ['e', 14, '#00FF00', '#00FF00'], ['z', 0, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['c', 0, 'blue', 'blue'], ['.', 2, 'blue', 'blue'], ['v', 4, 'blue', 'blue'], ['a', 0], ['j', 2], ['d', 0], ['l', 2], ['f', 4], ['q', 0, '#00FF00', '#00FF00'], ['u', 2, '#00FF00', '#00FF00'], ['e', 0, '#00FF00', '#00FF00'], ['o', 14, '#00FF00', '#00FF00'], ['z', 0, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['c', 0, 'blue', 'blue'], ['.', 2, 'blue', 'blue'], ['/', 4, 'blue', 'blue'], ['a', 0], ['j', 2], ['d', 0], ['l', 2], [';', 4], ['q', 0, '#00FF00', '#00FF00'], ['u', 2, '#00FF00', '#00FF00'], [' ', 0, 'blue', 'blue']
 	],
 	"Sunny_Day" : [
-		['f', 750], [';', 500], ['l', 250], ['k', 500], ['j', 750], [';', 500], ['l', 250], ['k', 500], ['h', 750], [';', 500], ['l', 250], ['k', 500], ['g', 750], ['s', 500], ['g', 250], ['k', 500], ['f', 750], [';', 500], ['l', 250], ['k', 500], ['j', 750], [';', 500], ['l', 250], ['k', 500], ['h', 750], [';', 500], ['l', 250], ['k', 500], ['g', 750], ['s', 500], ['g', 250], ['k', 500], ['f', 750], [';', 500], ['l', 250], ['k', 500], ['j', 750], [';', 500], ['l', 250], ['k', 500], ['h', 750], [';', 500], ['l', 250], ['k', 500], ['g', 750], ['s', 500], ['g', 250], ['k', 500], ['f', 750], [';', 500], ['l', 250], ['k', 500], ['j', 750], [';', 500], ['l', 250], ['k', 500], ['h', 750], [';', 500], ['l', 250], ['k', 500], ['g', 750], ['s', 500], ['g', 250], ['k', 500], ['f', 750], [';', 500], ['l', 250], ['k', 500], ['j', 750], [';', 500], ['l', 250], ['k', 500], ['h', 750], [';', 500], ['l', 250], ['k', 500], ['g', 750], ['s', 500], ['g', 250], ['k', 500], ['f', 750], [';', 500], ['l', 250], ['k', 500], ['j', 750], [';', 500], ['l', 250], ['k', 500], ['h', 750], [';', 500], ['l', 250], ['k', 500], ['g', 750], ['s', 500], ['g', 250], ['k', 500], ['f', 750], [';', 500], ['l', 250], ['k', 500], ['j', 750], [';', 500], ['l', 250], ['k', 500], ['h', 750], [';', 500], ['l', 250], ['k', 500], ['g', 750], ['s', 500], ['g', 250], ['k', 500], ['f', 750], [';', 500], ['l', 250], ['k', 500], ['j', 750], [';', 500], ['l', 250], ['k', 500], ['h', 750], [';', 500], ['l', 250], ['k', 500], ['g', 750], ['s', 500], ['g', 250], ['k', 500],
+		['f', 3], [';', 2], ['l', 1], ['k', 2], ['j', 3], [';', 2], ['l', 1], ['k', 2], ['h', 3], [';', 2], ['l', 1], ['k', 2], ['g', 3], ['s', 2], ['g', 1], ['k', 2], ['f', 3], [';', 2], ['l', 1], ['k', 2], ['j', 3], [';', 2], ['l', 1], ['k', 2], ['h', 3], [';', 2], ['l', 1], ['k', 2], ['g', 3], ['s', 2], ['g', 1], ['k', 2], ['f', 3], [';', 2], ['l', 1], ['k', 2], ['j', 3], [';', 2], ['l', 1], ['k', 2], ['h', 3], [';', 2], ['l', 1], ['k', 2], ['g', 3], ['s', 2], ['g', 1], ['k', 2], ['f', 3], [';', 2], ['l', 1], ['k', 2], ['j', 3], [';', 2], ['l', 1], ['k', 2], ['h', 3], [';', 2], ['l', 1], ['k', 2], ['g', 3], ['s', 2], ['g', 1], ['k', 2], ['f', 3], [';', 2], ['l', 1], ['k', 2], ['j', 3], [';', 2], ['l', 1], ['k', 2], ['h', 3], [';', 2], ['l', 1], ['k', 2], ['g', 3], ['s', 2], ['g', 1], ['k', 2], ['f', 3], [';', 2], ['l', 1], ['k', 2], ['j', 3], [';', 2], ['l', 1], ['k', 2], ['h', 3], [';', 2], ['l', 1], ['k', 2], ['g', 3], ['s', 2], ['g', 1], ['k', 2], ['f', 3], [';', 2], ['l', 1], ['k', 2], ['j', 3], [';', 2], ['l', 1], ['k', 2], ['h', 3], [';', 2], ['l', 1], ['k', 2], ['g', 3], ['s', 2], ['g', 1], ['k', 2], ['f', 3], [';', 2], ['l', 1], ['k', 2], ['j', 3], [';', 2], ['l', 1], ['k', 2], ['h', 3], [';', 2], ['l', 1], ['k', 2], ['g', 3], ['s', 2], ['g', 1], ['k', 2],
+	],
+	"Fallen_Down" : [
+	['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['h', 1], ['f', 1], ['j', 2], ['f', 1], ['h', 1], ['k', 1], ['i', 1, '#00FF00', '#00FF00'], ['k', 1], ['l', 1], ['j', 1], ['f', 1], ['l', 1], ['h', 1], ['l', 1], ['h', 1], ['l', 1], ['h', 1], ['l', 1], ['g', 1], ['l', 1], ['g', 1], [';', 2], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['k', 1], ['l', 1], ['k', 2], ['i', 2, '#00FF00', '#00FF00'], ['j', 2], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['h', 1], ['f', 1], ['j', 2], ['f', 1], ['h', 1], ['k', 1], ['i', 1, '#00FF00', '#00FF00'], ['k', 1], ['l', 1], ['j', 1], ['f', 1], ['l', 1], ['h', 1], ['l', 1], ['h', 1], ['l', 1], ['h', 1], ['l', 1], ['g', 1], ['l', 1], ['g', 1], [';', 2], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['k', 1], ['l', 1], ['k', 2], ['i', 2, '#00FF00', '#00FF00'], ['j', 2], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['h', 1], ['f', 1], ['j', 2], ['f', 1], ['h', 1], ['k', 1], ['i', 1, '#00FF00', '#00FF00'], ['k', 1], ['l', 1], ['j', 1], ['f', 1], ['l', 1], ['h', 1], ['l', 1], ['h', 1], ['l', 1], ['h', 1], ['l', 1], ['g', 1], ['l', 1], ['g', 1], [';', 2], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['k', 1], ['l', 1], ['k', 2], ['i', 2, '#00FF00', '#00FF00'], ['j', 2], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['l', 1], ['j', 1], ['h', 1], ['f', 1], ['j', 2], ['f', 1], ['h', 1], ['k', 1], ['i', 1, '#00FF00', '#00FF00'], ['k', 1], ['l', 1], ['j', 1], ['f', 1], ['l', 1], ['h', 1], ['l', 1], ['h', 1], ['l', 1], ['h', 1], ['l', 1], ['g', 1], ['l', 1], ['g', 1], [';', 2], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['k', 1], ['l', 1], ['k', 2], ['i', 2, '#00FF00', '#00FF00'], ['j', 2], ['k', 3], ['g', 1], ['h', 1], ['j', 1], ['k', 2], ['j', 2], ['k', 2], ['g', 3], ['h', 1], ['g', 1], ['f', 1], ['d', 2], [';', 2], ['l', 2], ['k', 3], ['g', 1], ['h', 1], ['j', 1], ['k', 2], ['j', 2], ['k', 2], [';', 3], ['p', 1, '#00FF00', '#00FF00'], [';', 1], ['l', 1], ['k', 2], ['l', 2], ['j', 2], ['k', 3], ['g', 1], ['h', 1], ['j', 1], ['k', 2], ['j', 2], ['k', 2], ['g', 3], ['h', 1], ['g', 1], ['f', 1], ['d', 2], [';', 2], ['l', 2], ['k', 3], ['g', 1], ['h', 1], ['j', 1], ['k', 2], ['j', 2], ['k', 2], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['l', 1], ['i', 1, '#00FF00', '#00FF00'], ['k', 1], ['l', 1], ['k', 2], ['i', 2, '#00FF00', '#00FF00'], ['j', 2], ['a', 3], ['l', 3], ['k', 6], ['j', 3], ['l', 3], ['a', 6], ['a', 3], ['j', 3], ['l', 5], [';', 1], ['l', 3], ['k', 3], ['j', 6], ['a', 3], ['l', 3], ['k', 6], ['j', 3], ['l', 3], ['a', 6], ['a', 3], ['j', 3], ['l', 5], [';', 1], ['l', 3], ['k', 3], ['j', 6], 
+	['a', 3], ['l', 2], ['i', 1, '#00FF00', '#00FF00'], ['k', 2], ['j', 1], ['h', 2], ['j', 1], ['k', 3], ['u', 1, '#00FF00', '#00FF00'], ['j', 1], ['m', 1, 'blue', 'blue'], ['l', 6], 
+	['d', 3], ['l', 2], ['i', 1, '#00FF00', '#00FF00'], ['k', 2], ['j', 1], ['k', 2], ['l', 1], ['j', 3], ['k', 3], ['k', 2], ['j', 1], ['h', 2], ['j', 1], 
+	['a', 3], ['l', 2], ['i', 1, '#00FF00', '#00FF00'], ['k', 2], ['j', 1], ['h', 2], ['j', 1], ['k', 3], ['u', 1, '#00FF00', '#00FF00'], ['j', 1], ['m', 1, 'blue', 'blue'], ['l', 6], 
+	['d', 3], ['l', 2], ['i', 1, '#00FF00', '#00FF00'], ['k', 2], ['j', 1], ['k', 2], ['l', 1], ['j', 3], ['k', 3], ['k', 2], ['j', 1], ['h', 2], ['j', 1], 
+	['/', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['v', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['c', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['.', 1, 'blue', 'blue'], [',', 2, 'blue', 'blue'], ['m', 1, 'blue', 'blue'], ['n', 2, 'blue', 'blue'], ['b', 1, 'blue', 'blue'], 
+	['/', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['v', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['c', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['.', 1, 'blue', 'blue'], [',', 2, 'blue', 'blue'], ['m', 1, 'blue', 'blue'], ['n', 3, 'blue', 'blue'], 
+	['/', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['b', 2, 'blue', 'blue'], ['n', 1, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], [',', 1, 'blue', 'blue'], ['m', 1, 'blue', 'blue'], ['n', 0, 'blue', 'blue'], 
 	],
 	"Field_of_Memories" : [
+		['u', 1, "#FFFDE0", "#CCCCCC", 0.3], ['y', 1, "#FFFDE0", "#CCCCCC", 0.3], ['u', 1, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['r', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], 
+		['w', 1, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['q', 1, "#FFFDE0", "#CCCCCC", 0.3], ['q', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], 
 		
+		['r', 1, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.75, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['r', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['t', 1, "#FFFDE0", "#CCCCCC", 0.3], 
+		['w', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], 
+		['r', 1, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['r', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['q', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['o', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['i', 0.5, "#FFFDE0", "#CCCCCC", 0.3], 
+		
+		['u', 1, "#FFFDE0", "#CCCCCC", 0.3], ['y', 1, "#FFFDE0", "#CCCCCC", 0.3], ['u', 1, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['r', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], 
+		['w', 1, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['q', 1, "#FFFDE0", "#CCCCCC", 0.3], ['q', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], 
+		['r', 1, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.75, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['r', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['t', 1, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['r', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['t', 0.25, "#FFFDE0", "#CCCCCC", 0.3], 
+		['y', 1, "#FFFDE0", "#CCCCCC", 0.3], ['r', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['t', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['y', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['u', 2, "#FFFDE0", "#CCCCCC", 0.3], 
+		
+		['u', 1, '#FFFDE0', '#CCCCCC', 0.4], ['y', 1, '#FFFDE0', '#CCCCCC', 0.4], ['u', 1, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['r', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['w', 1, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['q', 1, '#FFFDE0', '#CCCCCC', 0.4], ['q', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['r', 1, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.75, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['r', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['t', 1, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['r', 1, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['r', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['q', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['o', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['i', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['u', 1, '#FFFDE0', '#CCCCCC', 0.4], ['y', 1, '#FFFDE0', '#CCCCCC', 0.4], ['u', 1, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['r', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['w', 1, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['q', 1, '#FFFDE0', '#CCCCCC', 0.4], ['q', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['r', 1, '#FFFDE0', '#CCCCCC', 0.4], ['w', 0.75, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['r', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['t', 1, '#FFFDE0', '#CCCCCC', 0.4], ['e', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['r', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['t', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['y', 1, '#FFFDE0', '#CCCCCC', 0.4], ['r', 0.5, '#FFFDE0', '#CCCCCC', 0.4], ['t', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['y', 0.25, '#FFFDE0', '#CCCCCC', 0.4], ['u', 1.5, '#FFFDE0', '#CCCCCC', 0.4], 
+		['f', 0.5], ['j', 0.5], ["l", 0.5], ['f', 0.5], ['j', 0.5], ["l", 0.5], [';', 0.5], ['l', 0.5], 
+		['f', 0.5], ['j', 0.5], ["l", 0.5], ['f', 0.5], ['j', 0.5], ["l", 0.5], [';', 0.5], ['l', 0.5], 
+		['f', 0.5], ['j', 0.5], ["l", 0.5], ['f', 0.5], ['l', 0.5], ["f", 0.5], ['j', 0.5], ['h', 0.5], 
+		['s', 0.5], ['f', 0.5], ['d', 0.5], ['a', 0.5], ['s', 0.5], ['f', 0.5], ['d', 0.5], ['a', 0.5], 
+		
+		['f', 0.5], ['j', 0.5], ["l", 0.5], ['f', 0.5], ['j', 0.5], ["l", 0.5], [';', 0.5], ['l', 0.5], 
+		['f', 0.5], ['j', 0.5], ["l", 0.5], ['f', 0.5], ['j', 0.5], ["l", 0.5], [';', 0.5], ['l', 0.5], 
+		['j', 0.5], ['k', 0.5], ['l', 0.5], [';', 0.5], ['j', 0.5], ['k', 0.5], ['l', 0.5], [';', 0.5], 
+		['l', 0.5], ['k', 0.5], ['j', 0.5], ['l', 0.5], ['k', 0.5], ['h', 0.5], ['k', 0.5], ['l', 0.5], 
+		
+		['j', 4], 
+		
+		['j', 1], ['h', 1], ['j', 1], [';', 1],
+		['l', 1], ['k', 1], ['j', 1], ['k', 1],
+		['j', 1], ['h', 1], ['j', 1], [';', 1],
+		['l', 1], ['k', 1], ['l', 1], ['k', 1],
+		['j', 1], ['h', 1], ['j', 1], ['k', 1],
+		['l', 1], ['k', 1], ['j', 1], ['k', 1],
+		['j', 1], ['h', 1], ['j', 1], ['j', 1],
+		['k', 1], ['j', 1], ['h', 0.5], ['k', 0.5], [';', 1],
+		
+		['j', 0.5], ['k', 0.5], [';', 0.5], ['l', 0.5], ['f', 0.5], ['j', 0.5], ['k', 0.5], ['f', 0.5], 
+		['j', 0.5], ['k', 0.5], ['l', 0.5], [';', 0.5], ['f', 0.5], ['j', 0.5], ['k', 0.5], ['f', 0.5], 
+		['h', 1], ['g', 0.5], ['d', 0.5], ['s', 0.5], ['f', 0.5], ['d', 0.5], ['a', 0.5], 
+		['s', 0.5], ['f', 0.5], ['d', 0.5], ['a', 0.5], ['s', 0.5], ['f', 0.5], ['j', 0.5], ['f', 0.5], 		
+		
+		['h', 0.5], ['j', 0.5], ['k', 0.5], ['l', 0.5], [';', 0.5], ['k', 0.5], ['l', 0.5], ['j', 0.5], 
+		['k', 0.5], ['l', 0.5], ['k', 0.5], ['h', 0.5], ['j', 0.5], ['k', 0.5], ['l', 0.5], [';', 0.5], 
+		['j', 0.5], ['k', 0.5], ['l', 0.5], [';', 0.5], ['l', 0.5], ['k', 0.5], ['j', 0.5], ['l', 0.5], 
+		['k', 0.5], ['h', 0.5], ['k', 0.5], ['l', 0.5], ['j', 2], 
+		
+		[';', 1], [';', 0.5], ['l', 0.25], ['k', 0.25], ['j', 1], ['f', 0.5], ['d', 0.25], ['s', 0.25], 
+		['a', 1], [';', 0.5], ['l', 0.25], ['k', 0.25], ['j', 1], ['a', 0.75], ['s', 0.25], 
+		['d', 0.5], ['f', 0.5], ['g', 0.5], ['f', 0.25], ['d', 0.25], ['s', 1], ['a', 0.75], ['f', 0.25], 
+		['d', 0.5], ['a', 0.5], ['l', 0.5], ['k', 0.5], ['j', 1], ['l', 1], 
+		
+		[';', 1], [';', 0.5], ['l', 0.25], ['k', 0.25], ['j', 1], ['f', 0.5], ['d', 0.25], ['s', 0.25], 
+		['a', 1], [';', 0.5], ['l', 0.25], ['k', 0.25], ['j', 1], ['a', 0.75], ['s', 0.25], 
+		['d', 0.5], ['f', 0.5], ['g', 0.5], ['f', 0.25], ['d', 0.25], ['s', 1], ['a', 0.75], ['f', 0.25], 
+		['d', 0.5], ['a', 0.5], [';', 0.5], ['l', 0.5], ['k', 2], 
 	],
 	"My_Time" : [
 		['a', 0], ['j', 300], 
@@ -206,6 +241,19 @@ function splitmix32(a) {
   }
 }
 
+function readTextFile(file, callback) {
+    let rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+			
+        }
+    }
+    rawFile.send(null);
+}
+
 function storeValue(key, value){
 	localStorage.setItem(key, JSON.stringify(value));
 }
@@ -214,34 +262,31 @@ function parseValue(key){
 	return JSON.parse(localStorage.getItem(key));
 }
 
-if (localStorage.getItem("KeyboardSmash/highScores") == null){
-	storeValue("KeyboardSmash/highScores", {
-		"linnea" : 0,
-		"Sunny_Day" : 0,
-		"Field_of_Memories" : 0,
-		"My_Time" : 0,
-	});
-}
-
 const goals = {
 	"linnea" : 3000,
 	"Sunny_Day" : 10000,
+	"Fallen_Down" : 30000, 
 	"My_Time" : 30000, 
 };
 
-const highScores = parseValue("KeyboardSmash/highScores");
-
-var locked = {
-	"linnea" : false, 
-	"Sunny_Day" : !(highScores["linnea"] > goals["linnea"]), 
-	"My_Time" : !(highScores["Sunny_Day"] > goals["Sunny_Day"]), 
+const highScores = {
+	"linnea" : 0,
+	"Sunny_Day" : 0,
+	"Fallen_Down" : 0,
+	"Field_of_Memories" : 0,
+	"My_Time" : 0,
 }
+
+Object.assign(highScores, parseValue("KeyboardSmash/highScores"));
+
+var locked = {};
 
 function refreshLocked(){
 	locked = {
 		"linnea" : false, 
 		"Sunny_Day" : !(highScores["linnea"] > goals["linnea"]), 
-		"Field_of_Memories" : true,
+		"Fallen_Down" : !(highScores["Sunny_Day"] > goals["Sunny_Day"]),
+		"Field_of_Memories" : !(highScores["Fallen_Down"] > goals["Fallen_Down"]),
 		"My_Time" : true, 
 	}
 }
@@ -325,8 +370,8 @@ class Slideshow {
 			ctx.font = "50px bold merriweather";
 			if (!slidei[1]){
 				ctx.fillStyle = {
-					"easy" : "turquoise",
-					"normal" : "white",
+					"easy" : "#00FF00",
+					"normal" : "yellow",
 					"hard" : "orange",
 					"very hard" : "red",
 				}[gamei.difficulty];
@@ -452,6 +497,7 @@ class Slideshow {
 						this.transform.e = 0;
 						this.timers.idle = getTime();
 						this.animationLock = false;
+						sessionStorage.setItem("KeyboardSmash/slideIndex", this.index);
 					}
 					break;
 				}
@@ -474,6 +520,7 @@ class Slideshow {
 						this.currentAnimation = null;
 						this.timers.idle = getTime();
 						this.animationLock = false;
+						sessionStorage.setItem("KeyboardSmash/slideIndex", this.index)
 					}
 					break;
 				}
@@ -767,7 +814,7 @@ class Game {
 		for (const note of this.song){
 			
 			const chr = note[0];
-			const duration = note[1];
+			const duration = note[1] * this.settings.msPerBeat;
 			let color1 = this.settings.color1;
 			let color2 = this.settings.color2;
 			let speed = this.settings.speed;
@@ -823,6 +870,12 @@ class Game {
 		}
 		
 		this.percentScore = Math.round(this.currentScore / this.maxScore * 1000) / 10;
+		
+		if (keyboard['1']){
+			this.songfile.playbackRate = 2.0;
+		} else if (keyboard['2']){
+			this.songfile.playbackRate = 1.0;
+		}
 		
 		if (this.songfile.ended){
 			this.ended = true;
@@ -1006,7 +1059,7 @@ class KeyButton {
 		if (keyboard[this.c]){
 			if (!this.pressed){
 				for (const key of this.keys){
-					if (Math.abs(key.endTime - gT) <= 100){
+					if (Math.abs(key.endTime - gT) <= 100 || Math.abs(key.xpos - this.xpos) <= 50 && Math.abs(key.ypos - this.ypos) <= 50){
 						this.pressedSuccessfully = true;
 						key.deleteself = true;
 						this.parentKeyboard.addScore += 100;
@@ -1185,31 +1238,54 @@ linnea.songAuthor = "unknown";
 const Sunny_Day = new Game("Sunny_Day"); 
 Sunny_Day.keyboard = kb; 
 Sunny_Day.difficulty = "easy"; 
-Sunny_Day.settings.speed = 0.5;
 Sunny_Day.songAuthor = "unknown"; 
+Sunny_Day.settings.msPerBeat = 250;
+
+//create Fallen Down Game
+const Fallen_Down = new Game("Fallen_Down");
+Fallen_Down.keyboard = kb;
+Fallen_Down.difficulty = "normal";
+Fallen_Down.songAuthor = "Toby Fox";
+Fallen_Down.settings.speed = 0.5;
+Fallen_Down.settings.msPerBeat = 272.7;
 
 //create Field of Memories Game
 const Field_of_Memories = new Game("Field_of_Memories");
 Field_of_Memories.keyboard = kb;
 Field_of_Memories.difficulty = "hard";
 Field_of_Memories.songAuthor = "Waterflame";
+Field_of_Memories.settings = {
+	color1 : "#FFFDE0",
+	speed : 0.7,
+	color2 : "#CCCCCC",
+	colorStyle : "radialGradient",
+	textColor : "black", 
+	strokeColor : "#FFFDE0", 
+	glowColor : "#FFFDE0",
+	anticipateChar : false,
+	anticipateKey : true,
+	msPerBeat : 462, 
+};
 
 //create My Time game
 const My_Time = new Game("My_Time"); 
 My_Time.keyboard = kb; 
 My_Time.difficulty = "hard"; 
-My_Time.settings.speed = 0.4;
+My_Time.settings.speed = 0.6;
 My_Time.songAuthor = "bo en";
 
 const SS = new Slideshow(); 
 SS.slides = [
 	[linnea, locked.linnea, "#444444", "#BBBBBB"], 
 	[Sunny_Day, locked.Sunny_Day, "#FFDDDD", "#333333"], 
+	[Fallen_Down, locked.Fallen_Down, "#000000", "#222222"], 
 	[Field_of_Memories, locked.Field_of_Memories, "#CC9911", "#000000"],
 	[My_Time, locked.My_Time, "#AA00AA", "#33AAFF"]
 ];
 SS.slidenum = SS.slides.length;
-
+if (sessionStorage.getItem("KeyboardSmash/slideIndex") !== null){
+	SS.index = JSON.parse(sessionStorage.getItem("KeyboardSmash/slideIndex"));
+}
 function mainloop(){
 	SS.loop();
 }
