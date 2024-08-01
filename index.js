@@ -835,18 +835,11 @@ class Game {
 		let endTime = 0;
 		for (const note of this.song){
 			
-			const chr = note[0];
-			const duration = note[1] * this.settings.msPerBeat;
-			let color1 = this.settings.color1;
-			let color2 = this.settings.color2;
-			let speed = this.settings.speed;
-			if (note.length >= 4){
-				color1 = note[2];
-				color2 = note[3];
-				if (note.length >= 5){
-					speed = note[4];
-				}
-			}
+			const chr = note["symbol"];
+			const duration = note["duration"] * this.settings.msPerBeat;
+			const color1 = note["color1"];
+			const color2 = note["color2"];
+			const speed = note["speed"];
 			
 			const btnIndex = charToIndex[chr];
 			this.keyboard.buttons[btnIndex].addKey(new Key(chr, color1, endTime, speed, color2, this.settings.colorStyle, this.settings.textColor, this.settings.strokeColor, this.settings.glowColor));

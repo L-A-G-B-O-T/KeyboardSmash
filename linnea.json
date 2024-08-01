@@ -1,0 +1,15 @@
+{
+	"officialName" : "linnea", 
+	"songAuthor" : "unknown", 
+	"difficulty" : "easy", 
+	"settings" : {
+		"colorStyle" : "horizontalGradient", 
+		"textColor" : "#FFFFFF", 
+		"strokeColor" : "#FFFFFF", 
+		"glowColor" : "#FFDDDD", 
+		"msPerBeat" : 300
+	}, 
+	"keys" : [
+		{"symbol":"m","duration":2,"color1":"#0000FF","color2":"blue","speed":0.7},{"symbol":".","duration":6,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"j","duration":2,"color1":"red","color2":"red","speed":0.7},{"symbol":"l","duration":6,"color1":"red","color2":"red","speed":0.7},{"symbol":"u","duration":2,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":"o","duration":14,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":"z","duration":2,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"c","duration":6,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"a","duration":2,"color1":"red","color2":"red","speed":0.7},{"symbol":"d","duration":6,"color1":"red","color2":"red","speed":0.7},{"symbol":"q","duration":2,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":"e","duration":14,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":"z","duration":0,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"m","duration":2,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"c","duration":0,"color1":"blue","color2":"blue","speed":0.7},{"symbol":".","duration":2,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"v","duration":4,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"a","duration":0,"color1":"red","color2":"red","speed":0.7},{"symbol":"j","duration":2,"color1":"red","color2":"red","speed":0.7},{"symbol":"d","duration":0,"color1":"red","color2":"red","speed":0.7},{"symbol":"l","duration":2,"color1":"red","color2":"red","speed":0.7},{"symbol":"f","duration":4,"color1":"red","color2":"red","speed":0.7},{"symbol":"q","duration":0,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":"u","duration":2,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":"e","duration":0,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":"o","duration":14,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":"z","duration":0,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"m","duration":2,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"c","duration":0,"color1":"blue","color2":"blue","speed":0.7},{"symbol":".","duration":2,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"/","duration":4,"color1":"blue","color2":"blue","speed":0.7},{"symbol":"a","duration":0,"color1":"red","color2":"red","speed":0.7},{"symbol":"j","duration":2,"color1":"red","color2":"red","speed":0.7},{"symbol":"d","duration":0,"color1":"red","color2":"red","speed":0.7},{"symbol":"l","duration":2,"color1":"red","color2":"red","speed":0.7},{"symbol":";","duration":4,"color1":"red","color2":"red","speed":0.7},{"symbol":"q","duration":0,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":"u","duration":2,"color1":"#00FF00","color2":"#00FF00","speed":0.7},{"symbol":" ","duration":0,"color1":"blue","color2":"blue","speed":0.7}
+	]
+}
