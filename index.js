@@ -579,12 +579,32 @@ class Slideshow {
 					ctx.setTransform(1, 0, 0, 1, 0, 0);
 					
 					if (percentTime2 >= 1.1){
-						this.currentAnimation = "started";
-						this.started = true;
-						this.timers.fadeStart = getTime();
-						slidei[0].background.color1 = slidei[2];
-						slidei[0].background.color2 = slidei[3];
-						slidei[0].start();
+						//fetch data from .json file
+						if (slidei[0].dataLoaded){
+							this.currentAnimation = "started";
+							this.started = true;
+							this.timers.fadeStart = getTime();
+							slidei[0].background.color1 = slidei[2];
+							slidei[0].background.color2 = slidei[3];
+							slidei[0].start();
+							
+							break;
+						}
+						readTextFile("SongData/"+slidei[0].songname+".json", function(txt){ //loads the data file if not already loaded
+							const songData = JSON.parse(txt);
+							slidei[0].song = songData.keys;
+							slidei[0].officialName = songData.officialName;
+							slidei[0].songAuthor = songData.songAuthor; 
+							slidei[0].dataLoaded = true;
+							Object.assign(slidei[0].settings, songData.settings);
+							
+							this.currentAnimation = "started";
+							this.started = true;
+							this.timers.fadeStart = getTime();
+							slidei[0].background.color1 = slidei[2];
+							slidei[0].background.color2 = slidei[3];
+							slidei[0].start();
+						});
 						this.drawSlideBackground(this.index);
 					}
 					
@@ -598,7 +618,7 @@ class Slideshow {
 					ctx.font = "30px bold merriweather";
 					ctx.textAlign = "center";
 					ctx.globalAlpha = Math.tanh(percentTime);
-					ctx.fillText(`"${slidei[0].songname}" by ${slidei[0].songAuthor}`, canvas.width / 2, canvas.height / 4);
+					ctx.fillText(`"${slidei[0].officialName}" by ${slidei[0].songAuthor}`, canvas.width / 2, canvas.height / 4);
 					if (slidei[0].highScore <= goals[slidei[0].songname]) ctx.fillText(`Get a score of ${goals[slidei[0].songname]} or higher to unlock next level`, canvas.width / 2, canvas.height / 4 + 40);
 					
 					ctx.globalAlpha = Math.max(Math.tanh(percentTime - 1), 0);
@@ -801,6 +821,7 @@ class Game {
 		
 		this.started = false;
 		this.ended = false;
+		this.dataLoaded = false; 
 		this.baseStartTime = 0;
 	}
 	getTime(){
@@ -808,7 +829,8 @@ class Game {
 	}
 	start(){
 		const charToIndex = this.keyboard.buttonDict;
-		this.ended = false;
+		this.ended = false;		
+		
 		this.maxScore = this.song.length * 100;
 		let endTime = 0;
 		for (const note of this.song){
@@ -1232,29 +1254,29 @@ kb.addButtons(defaultLayout);
 const linnea = new Game("linnea"); 
 linnea.keyboard = kb; 
 linnea.difficulty = "easy";
-linnea.songAuthor = "unknown";
+//linnea.songAuthor = "unknown";
 
 //create Sunny Day Game
 const Sunny_Day = new Game("Sunny_Day"); 
 Sunny_Day.keyboard = kb; 
 Sunny_Day.difficulty = "easy"; 
-Sunny_Day.songAuthor = "unknown"; 
-Sunny_Day.settings.msPerBeat = 250;
+//Sunny_Day.songAuthor = "unknown"; 
+//Sunny_Day.settings.msPerBeat = 250;
 
 //create Fallen Down Game
 const Fallen_Down = new Game("Fallen_Down");
 Fallen_Down.keyboard = kb;
 Fallen_Down.difficulty = "normal";
-Fallen_Down.songAuthor = "Toby Fox";
-Fallen_Down.settings.speed = 0.5;
-Fallen_Down.settings.msPerBeat = 272.7;
+//Fallen_Down.songAuthor = "Toby Fox";
+//Fallen_Down.settings.speed = 0.5;
+//Fallen_Down.settings.msPerBeat = 272.7;
 
 //create Field of Memories Game
 const Field_of_Memories = new Game("Field_of_Memories");
 Field_of_Memories.keyboard = kb;
-Field_of_Memories.difficulty = "hard";
-Field_of_Memories.songAuthor = "Waterflame";
-Field_of_Memories.settings = {
+//Field_of_Memories.difficulty = "hard";
+//Field_of_Memories.songAuthor = "Waterflame";
+/*Field_of_Memories.settings = {
 	color1 : "#FFFDE0",
 	speed : 0.7,
 	color2 : "#CCCCCC",
@@ -1265,14 +1287,14 @@ Field_of_Memories.settings = {
 	anticipateChar : false,
 	anticipateKey : true,
 	msPerBeat : 462, 
-};
+};*/
 
 //create My Time game
 const My_Time = new Game("My_Time"); 
 My_Time.keyboard = kb; 
 My_Time.difficulty = "hard"; 
-My_Time.settings.speed = 0.6;
-My_Time.songAuthor = "bo en";
+//My_Time.settings.speed = 0.6;
+//My_Time.songAuthor = "bo en";
 
 const SS = new Slideshow(); 
 SS.slides = [
