@@ -1267,7 +1267,7 @@ Fallen_Down.difficulty = "normal";
 //create Field of Memories Game
 const Field_of_Memories = new Game("Field_of_Memories");
 Field_of_Memories.keyboard = kb;
-//Field_of_Memories.difficulty = "hard";
+Field_of_Memories.difficulty = "hard";
 //Field_of_Memories.songAuthor = "Waterflame";
 /*Field_of_Memories.settings = {
 	color1 : "#FFFDE0",
