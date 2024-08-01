@@ -1,18 +1,18 @@
 {
-	officialName : "Field of Memories", 
-	songAuthor : "Waterflame", 
-	difficulty : "hard", 
-	settings : {
-		color1 : "#FFFDE0",
-		color2 : "#CCCCCC",
-		speed : 0.7,
-		colorStyle : "radialGradient",
-		textColor : "black", 
-		strokeColor : "#FFFDE0", 
-		glowColor : "#FFFDE0",
-		msPerBeat : 462, 
+	"officialName" : "Field of Memories", 
+	"songAutho" : "Waterflame", 
+	"difficulty" : "hard", 
+	"settings" : {
+		"color1" : "#FFFDE0",
+		"color2" : "#CCCCCC",
+		"speed" : 0.7,
+		"colorStyle" : "radialGradient",
+		"textColor" : "black", 
+		"strokeColor" : "#FFFDE0", 
+		"glowColor" : "#FFFDE0",
+		"msPerBeat" : 462, 
 	}, 
-	keys : [
+	"keys" : [
 		['u', 1, "#FFFDE0", "#CCCCCC", 0.3], ['y', 1, "#FFFDE0", "#CCCCCC", 0.3], ['u', 1, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['r', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], 
 		['w', 1, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['q', 1, "#FFFDE0", "#CCCCCC", 0.3], ['q', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['w', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], 
 		
@@ -65,6 +65,6 @@
 		[';', 1], [';', 0.5], ['l', 0.25], ['k', 0.25], ['j', 1], ['f', 0.5], ['d', 0.25], ['s', 0.25], 
 		['a', 1], [';', 0.5], ['l', 0.25], ['k', 0.25], ['j', 1], ['a', 0.75], ['s', 0.25], 
 		['d', 0.5], ['f', 0.5], ['g', 0.5], ['f', 0.25], ['d', 0.25], ['s', 1], ['a', 0.75], ['f', 0.25], 
-		['d', 0.5], ['a', 0.5], [';', 0.5], ['l', 0.5], ['k', 2], 
-	], 
+		['d', 0.5], ['a', 0.5], [';', 0.5], ['l', 0.5], ['k', 2]
+	]
 }
