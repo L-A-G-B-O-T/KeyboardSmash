@@ -10,7 +10,7 @@
 		"textColor" : "black", 
 		"strokeColor" : "#FFFDE0", 
 		"glowColor" : "#FFFDE0",
-		"msPerBeat" : 462, 
+		"msPerBeat" : 462
 	}, 
 	"keys" : [
 		['u', 1, "#FFFDE0", "#CCCCCC", 0.3], ['y', 1, "#FFFDE0", "#CCCCCC", 0.3], ['u', 1, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.5, "#FFFDE0", "#CCCCCC", 0.3], ['r', 0.25, "#FFFDE0", "#CCCCCC", 0.3], ['e', 0.25, "#FFFDE0", "#CCCCCC", 0.3], 
