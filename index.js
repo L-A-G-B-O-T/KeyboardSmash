@@ -590,6 +590,7 @@ class Slideshow {
 							
 							break;
 						}
+						const this_ = this;
 						readTextFile("SongData/"+slidei[0].songname+".json", function(txt){ //loads the data file if not already loaded
 							const songData = JSON.parse(txt);
 							slidei[0].song = songData.keys;
@@ -598,9 +599,9 @@ class Slideshow {
 							slidei[0].dataLoaded = true;
 							Object.assign(slidei[0].settings, songData.settings);
 							
-							this.currentAnimation = "started";
-							this.started = true;
-							this.timers.fadeStart = getTime();
+							this_.currentAnimation = "started";
+							this_.started = true;
+							this_.timers.fadeStart = getTime();
 							slidei[0].background.color1 = slidei[2];
 							slidei[0].background.color2 = slidei[3];
 							slidei[0].start();
