@@ -303,6 +303,7 @@ class Slideshow {
 		this.index = 0; //which one is currently being looked at
 		this.playing = false; //if user is currently playing a game
 		this.globalAlpha = 1;
+		this.loadWait = false;
 		this.timers = {
 			idle : 0,
 			slide : 0, 
@@ -590,7 +591,10 @@ class Slideshow {
 							
 							break;
 						}
-						const this_ = this;
+						if (this.loadWait){
+							break;
+						}
+						this.loadWait = true;
 						readTextFile("SongData/"+slidei[0].songname+".json", function(txt){ //loads the data file if not already loaded
 							const songData = JSON.parse(txt);
 							slidei[0].song = songData.keys;
@@ -598,13 +602,7 @@ class Slideshow {
 							slidei[0].songAuthor = songData.songAuthor; 
 							slidei[0].dataLoaded = true;
 							Object.assign(slidei[0].settings, songData.settings);
-							
-							this_.currentAnimation = "started";
-							this_.started = true;
-							this_.timers.fadeStart = getTime();
-							slidei[0].background.color1 = slidei[2];
-							slidei[0].background.color2 = slidei[3];
-							slidei[0].start();
+							this.loadWait = false;
 						});
 						this.drawSlideBackground(this.index);
 					}
