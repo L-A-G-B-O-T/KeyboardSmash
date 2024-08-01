@@ -595,6 +595,7 @@ class Slideshow {
 							break;
 						}
 						this.loadWait = true;
+						const this_ = this;
 						readTextFile("SongData/"+slidei[0].songname+".json", function(txt){ //loads the data file if not already loaded
 							const songData = JSON.parse(txt);
 							slidei[0].song = songData.keys;
@@ -602,7 +603,7 @@ class Slideshow {
 							slidei[0].songAuthor = songData.songAuthor; 
 							slidei[0].dataLoaded = true;
 							Object.assign(slidei[0].settings, songData.settings);
-							this.loadWait = false;
+							this_.loadWait = false;
 						});
 						this.drawSlideBackground(this.index);
 					}
