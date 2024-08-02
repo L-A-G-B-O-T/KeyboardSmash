@@ -799,10 +799,10 @@ class Slideshow {
 }
 
 class Game {
-	constructor(s){
-		this.keyboard = null;
-		this.songfile = document.getElementById(s);
-		this.song = songs[s];
+	constructor(s, keyboard){
+		this.keyboard = keyboard;
+		this.songfile = null;
+		this.song = null;
 		this.songname = s;
 		this.difficulty = null;
 		
@@ -822,6 +822,7 @@ class Game {
 		this.started = false;
 		this.ended = false;
 		this.dataLoaded = false; 
+		this.songLoaded = false;
 		this.baseStartTime = 0;
 	}
 	getTime(){
@@ -845,9 +846,23 @@ class Game {
 			this.keyboard.buttons[btnIndex].addKey(new Key(chr, color1, endTime, speed, color2, this.settings.colorStyle, this.settings.textColor, this.settings.strokeColor, this.settings.glowColor));
 			endTime += duration;
 		}
-		this.songfile.playbackRate = 1;
-		this.songfile.play();
-		this.started = true;
+		
+		if (this.songLoaded){
+			this.songfile.playbackRate = 1;
+			this.songfile.play();
+			this.started = true;
+			return; 
+		}
+		
+		const this_ = this;
+		
+		this_.songfile = new Audio("SongFiles/"+this_.songname+".mp3");
+		this_.songfile.addEventListener("canplaythrough", function(e){
+			this_.songfile.playbackRate = 1;
+			this_.songfile.play();
+			this_.started = true;
+			this_.songLoaded = true;
+		});
 	}
 	loop(){
 		if (!this.started){
@@ -1244,29 +1259,25 @@ const kb = new Keyboard();
 kb.addButtons(defaultLayout);
 
 //create Linnea Game
-const linnea = new Game("linnea"); 
-linnea.keyboard = kb; 
+const linnea = new Game("linnea", kb); 
 linnea.difficulty = "easy";
 //linnea.songAuthor = "unknown";
 
 //create Sunny Day Game
-const Sunny_Day = new Game("Sunny_Day"); 
-Sunny_Day.keyboard = kb; 
+const Sunny_Day = new Game("Sunny_Day", kb); 
 Sunny_Day.difficulty = "easy"; 
 //Sunny_Day.songAuthor = "unknown"; 
 //Sunny_Day.settings.msPerBeat = 250;
 
 //create Fallen Down Game
-const Fallen_Down = new Game("Fallen_Down");
-Fallen_Down.keyboard = kb;
+const Fallen_Down = new Game("Fallen_Down", kb);
 Fallen_Down.difficulty = "normal";
 //Fallen_Down.songAuthor = "Toby Fox";
 //Fallen_Down.settings.speed = 0.5;
 //Fallen_Down.settings.msPerBeat = 272.7;
 
 //create Field of Memories Game
-const Field_of_Memories = new Game("Field_of_Memories");
-Field_of_Memories.keyboard = kb;
+const Field_of_Memories = new Game("Field_of_Memories", kb);
 Field_of_Memories.difficulty = "hard";
 //Field_of_Memories.songAuthor = "Waterflame";
 /*Field_of_Memories.settings = {
@@ -1283,8 +1294,7 @@ Field_of_Memories.difficulty = "hard";
 };*/
 
 //create My Time game
-const My_Time = new Game("My_Time"); 
-My_Time.keyboard = kb; 
+const My_Time = new Game("My_Time", kb); 
 My_Time.difficulty = "hard"; 
 //My_Time.settings.speed = 0.6;
 //My_Time.songAuthor = "bo en";
