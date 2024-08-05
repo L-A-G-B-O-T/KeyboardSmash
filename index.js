@@ -277,7 +277,16 @@ const highScores = {
 	"My_Time" : 0,
 }
 
+const maxScores = {
+	"linnea" : 0,
+	"Sunny_Day" : 0,
+	"Fallen_Down" : 0,
+	"Field_of_Memories" : 0,
+	"My_Time" : 0,
+}
+
 Object.assign(highScores, parseValue("KeyboardSmash/highScores"));
+Object.assign(maxScores, parseValue("KeyboardSmash/maxScores"));
 
 var locked = {};
 
@@ -807,7 +816,7 @@ class Game {
 		this.difficulty = null;
 		
 		this.highScore = highScores[s];
-		if (this.highScore == 0) this.maxScore = 0; else this.maxScore = this.song.length * 100;
+		this.maxScore = maxScores[s];
 		this.percentScore = 0;
 		this.currentScore = 0;
 		this.scoreShake = 0; //positive: green / white shake, negative: red shake
@@ -833,6 +842,9 @@ class Game {
 		this.ended = false;		
 		
 		this.maxScore = this.song.length * 100;
+		maxScores[this.songname] = this.maxScore;
+		storeValue("KeyboardSmash/maxScores", maxScores)
+		
 		let endTime = 0;
 		for (const note of this.song){
 			
