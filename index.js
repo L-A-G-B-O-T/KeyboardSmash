@@ -636,6 +636,7 @@ class Slideshow {
 					if (slidei[0].ended){
 						this.timers.endPause = getTime();
 						this.currentAnimation = "endPause";
+						slidei[0].keyboard.addScore = 0;
 					}
 					ctx.restore();
 					return;
