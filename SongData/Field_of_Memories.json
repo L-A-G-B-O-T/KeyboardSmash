@@ -2620,6 +2620,342 @@
             "color1": "#FFFDE0",
             "color2": "#CCCCCC",
             "speed": 0.5
+        }, 
+		{
+            "symbol": "a",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "f",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "s",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "d",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+		{
+            "symbol": "a",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "j",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "f",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "j",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "s",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "j",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "d",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "j",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+		{
+            "symbol": "a",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "s",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "f",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "d",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+		{
+            "symbol": "a",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "f",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "s",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "d",
+            "duration": 0.0,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.5
         }
     ]
 }
