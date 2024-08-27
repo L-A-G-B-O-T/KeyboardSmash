@@ -844,7 +844,7 @@ class Game {
 		
 		this.maxScore = this.song.length * 100;
 		maxScores[this.songname] = this.maxScore;
-		storeValue("KeyboardSmash/maxScores", maxScores)
+		storeValue("KeyboardSmash/maxScores", maxScores);
 		
 		let endTime = 0;
 		for (const note of this.song){
@@ -918,6 +918,8 @@ class Game {
 			this.songfile.playbackRate = 2.0;
 		} else if (keyboard['2']){
 			this.songfile.playbackRate = 1.0;
+		} else if (keyboard['3']){
+			this.songfile.playbackRate = 0.5;
 		}
 		
 		if (this.songfile.ended){
