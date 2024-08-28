@@ -3033,8 +3033,8 @@
             "color1": "#FFFDE0",
             "color2": "#CCCCCC",
             "speed": 0.6
-        }, 
-		{
+        },
+        {
             "symbol": ";",
             "duration": 0.5,
             "color1": "#FFFDE0",
@@ -3106,12 +3106,19 @@
         },
         {
             "symbol": "k",
-            "duration": 1.0,
+            "duration": 0.5,
             "color1": "#FFFDE0",
             "color2": "#CCCCCC",
             "speed": 0.6
-        }, 
-		{
+        },
+        {
+            "symbol": "s",
+            "duration": 0.5,
+            "color1": "#00021F",
+            "color2": "#333333",
+            "speed": 0.6
+        },
+        {
             "symbol": ";",
             "duration": 0.5,
             "color1": "#FFFDE0",
@@ -3134,9 +3141,16 @@
         },
         {
             "symbol": "j",
-            "duration": 2.5,
+            "duration": 2.0,
             "color1": "#FFFDE0",
             "color2": "#CCCCCC",
+            "speed": 0.6
+        },
+        {
+            "symbol": "a",
+            "duration": 0.5,
+            "color1": "#00021F",
+            "color2": "#333333",
             "speed": 0.6
         },
         {
@@ -3183,12 +3197,19 @@
         },
         {
             "symbol": "k",
-            "duration": 1.0,
+            "duration": 0.5,
             "color1": "#FFFDE0",
             "color2": "#CCCCCC",
             "speed": 0.6
-        }, 
-		{
+        },
+        {
+            "symbol": "s",
+            "duration": 0.5,
+            "color1": "#00021F",
+            "color2": "#333333",
+            "speed": 0.6
+        },
+        {
             "symbol": ";",
             "duration": 0.5,
             "color1": "#FFFDE0",
@@ -3211,9 +3232,16 @@
         },
         {
             "symbol": "j",
-            "duration": 2.5,
+            "duration": 2.0,
             "color1": "#FFFDE0",
             "color2": "#CCCCCC",
+            "speed": 0.6
+        },
+        {
+            "symbol": "d",
+            "duration": 0.5,
+            "color1": "#00021F",
+            "color2": "#333333",
             "speed": 0.6
         },
         {
@@ -3235,6 +3263,13 @@
             "duration": 0.5,
             "color1": "#FFFDE0",
             "color2": "#CCCCCC",
+            "speed": 0.6
+        },
+        {
+            "symbol": "f",
+            "duration": 0.0,
+            "color1": "#00021F",
+            "color2": "#333333",
             "speed": 0.6
         },
         {
