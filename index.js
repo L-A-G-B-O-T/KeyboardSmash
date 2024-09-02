@@ -266,6 +266,7 @@ const goals = {
 	"linnea" : 3000,
 	"Sunny_Day" : 10000,
 	"Fallen_Down" : 30000, 
+	"Field_of_Memories" : 40000, 
 	"My_Time" : 30000, 
 };
 
