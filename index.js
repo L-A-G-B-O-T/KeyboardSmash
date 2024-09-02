@@ -266,7 +266,7 @@ const goals = {
 	"linnea" : 3000,
 	"Sunny_Day" : 10000,
 	"Fallen_Down" : 30000, 
-	"Field_of_Memories" : 40000, 
+	"Field_of_Memories" : 45000, 
 	"My_Time" : 30000, 
 };
 
@@ -860,6 +860,8 @@ class Game {
 			this.keyboard.buttons[btnIndex].addKey(new Key(chr, color1, endTime, speed, color2, this.settings.colorStyle, this.settings.textColor, this.settings.strokeColor, this.settings.glowColor));
 			endTime += duration;
 		}
+		
+		this.keyboard.addScore = 0;
 		
 		if (this.songLoaded){
 			this.songfile.playbackRate = 1;
