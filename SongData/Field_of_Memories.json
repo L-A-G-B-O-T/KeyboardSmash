@@ -3449,7 +3449,203 @@
         },
         {
             "symbol": ";",
-            "duration": 1.0,
+            "duration": 1.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+		{
+            "symbol": "j",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        }, 
+		{
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+		{
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "h",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "duration": 0.5,
+            "color1": "#FFFDE0",
+            "color2": "#CCCCCC",
+            "speed": 0.7
+        }, 
+		{
+            "symbol": "j",
+            "duration": 2,
             "color1": "#FFFDE0",
             "color2": "#CCCCCC",
             "speed": 0.7
