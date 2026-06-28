@@ -1,0 +1,13 @@
+{
+    "officialName": "linnea",
+    "songAuthor": "unknown",
+    "difficulty": "customized",
+    "settings": {
+        "colorStyle": "horizontalGradient",
+        "textColor": "#FFFFFF",
+        "strokeColor": "#FFFFFF",
+        "glowColor": "#FFDDDD",
+        "msPerBeat": 300
+    },
+    "keys": []
+}

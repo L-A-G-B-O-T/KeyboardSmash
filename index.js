@@ -280,7 +280,7 @@ const goals = {
 	"Sunny_Day" : 10000,
 	"Fallen_Down" : 30000, 
 	"Field_of_Memories" : 40000, 
-	"linnea" : 67,
+	"blank" : 0,
 	"My_Time" : 30000, 
 };
 
@@ -289,7 +289,7 @@ const highScores = {
 	"Sunny_Day" : 0,
 	"Fallen_Down" : 0,
 	"Field_of_Memories" : 0,
-	"linnea_edited" : 0,
+	"blank" : 0,
 	"My_Time" : 0,
 }
 
@@ -298,7 +298,7 @@ const maxScores = {
 	"Sunny_Day" : 0,
 	"Fallen_Down" : 0,
 	"Field_of_Memories" : 0,
-	"linnea_edited": 0,
+	"blank": 0,
 	"My_Time" : 0,
 }
 
@@ -313,7 +313,7 @@ function refreshLocked(){
 		"Sunny_Day" : !(highScores["linnea"] > goals["linnea"]), 
 		"Fallen_Down" : !(highScores["Sunny_Day"] > goals["Sunny_Day"]),
 		"Field_of_Memories" : !(highScores["Fallen_Down"] > goals["Fallen_Down"]),
-		"linnea_edited" : !(highScores["Field_of_Memories"] > goals["Field_of_Memories"]), 
+		"blank" : !(highScores["Field_of_Memories"] > goals["Field_of_Memories"]), 
 		"My_Time" : true, 
 	}
 }
@@ -1594,8 +1594,8 @@ Field_of_Memories.difficulty = "hard";
 	msPerBeat : 462, 
 };*/
 
-const linnea_edited = new Game("linnea_edited", kb);
-linnea_edited.difficulty = "customized";
+const blank = new Game("blank", kb);
+blank.difficulty = "customized";
 
 //create My Time game
 const My_Time = new Game("My_Time", kb); 
@@ -1609,7 +1609,7 @@ SS.slides = [
 	[Sunny_Day, locked.Sunny_Day, "#FFDDDD", "#333333"], 
 	[Fallen_Down, locked.Fallen_Down, "#000000", "#222222"], 
 	[Field_of_Memories, locked.Field_of_Memories, "#CC9911", "#000000"],
-	[linnea_edited, locked.linnea_edited, "#444444", "#BBBBBB"], 
+	[blank, locked.blank, "#444444", "#BBBBBB"], 
 	[My_Time, locked.My_Time, "#AA00AA", "#33AAFF"]
 ];
 SS.slidenum = SS.slides.length;
