@@ -5,7 +5,7 @@
 	"settings" : {
 		"colorStyle" : "horizontalGradient", 
 		"textColor" : "#FFFFFF", 
-		"trokeColor" : "#FFFFFF", 
+		"strokeColor" : "#FFFFFF", 
 		"glowColor" : "#FFDDDD", 
 		"msPerBeat" : 272.7
 	}, 

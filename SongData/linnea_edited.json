@@ -1,0 +1,918 @@
+{
+    "officialName": "linnea (edited)",
+    "songAuthor": "unknown",
+    "difficulty": "customized",
+    "settings": {
+        "colorStyle": "horizontalGradient",
+        "textColor": "#FFFFFF",
+        "strokeColor": "#FFFFFF",
+        "glowColor": "#FFDDDD",
+        "msPerBeat": 300
+    },
+    "keys": [
+        {
+            "symbol": "m",
+            "endBeats": 0,
+            "duration": 0,
+            "color1": "#0000FF",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "m",
+            "endBeats": 0,
+            "duration": 2,
+            "color1": "#0000FF",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 2,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 2,
+            "duration": 6,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 8,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 8,
+            "duration": 2,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 10,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 10,
+            "duration": 6,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "u",
+            "endBeats": 16,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "u",
+            "endBeats": 16,
+            "duration": 2,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "o",
+            "endBeats": 18,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "o",
+            "endBeats": 18,
+            "duration": 8,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "q",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "w",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "e",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "r",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "t",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "y",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "u",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "i",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "o",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "p",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "a",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "s",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "d",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "f",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "g",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "h",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "j",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "k",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "l",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": ";",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "z",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "x",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "c",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "v",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "b",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "n",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "m",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": ",",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": ".",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "/",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": " ",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "ArrowUp",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "ArrowLeft",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "ArrowDown",
+            "endBeats": 26,
+            "duration": 0,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "ArrowRight",
+            "endBeats": 26,
+            "duration": 6,
+            "color1": "black",
+            "color2": "black",
+            "speed": 0.1
+        },
+        {
+            "symbol": "z",
+            "endBeats": 32,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "z",
+            "endBeats": 32,
+            "duration": 2,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "c",
+            "endBeats": 34,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "c",
+            "endBeats": 34,
+            "duration": 6,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "a",
+            "endBeats": 40,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "a",
+            "endBeats": 40,
+            "duration": 2,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 42,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 42,
+            "duration": 6,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "q",
+            "endBeats": 48,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "q",
+            "endBeats": 48,
+            "duration": 2,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "e",
+            "endBeats": 50,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "e",
+            "endBeats": 50,
+            "duration": 14,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "z",
+            "endBeats": 64,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "z",
+            "endBeats": 64,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "m",
+            "endBeats": 64,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "m",
+            "endBeats": 64,
+            "duration": 2,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "c",
+            "endBeats": 66,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "c",
+            "endBeats": 66,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 66,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 66,
+            "duration": 2,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "v",
+            "endBeats": 68,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "v",
+            "endBeats": 68,
+            "duration": 4,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "a",
+            "endBeats": 72,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "a",
+            "endBeats": 72,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 72,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 72,
+            "duration": 2,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 74,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 74,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 74,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 74,
+            "duration": 2,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 76,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 76,
+            "duration": 4,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "q",
+            "endBeats": 80,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "q",
+            "endBeats": 80,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "u",
+            "endBeats": 80,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "u",
+            "endBeats": 80,
+            "duration": 2,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "e",
+            "endBeats": 82,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "e",
+            "endBeats": 82,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "o",
+            "endBeats": 82,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "o",
+            "endBeats": 82,
+            "duration": 14,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "z",
+            "endBeats": 96,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "z",
+            "endBeats": 96,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "m",
+            "endBeats": 96,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "m",
+            "endBeats": 96,
+            "duration": 2,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "c",
+            "endBeats": 98,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "c",
+            "endBeats": 98,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 98,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 98,
+            "duration": 2,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 100,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 100,
+            "duration": 4,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": "a",
+            "endBeats": 104,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "a",
+            "endBeats": 104,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 104,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 104,
+            "duration": 2,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 106,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 106,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 106,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 106,
+            "duration": 2,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 108,
+            "duration": 0,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 108,
+            "duration": 4,
+            "color1": "red",
+            "color2": "red",
+            "speed": 0.7
+        },
+        {
+            "symbol": "q",
+            "endBeats": 112,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "q",
+            "endBeats": 112,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "u",
+            "endBeats": 112,
+            "duration": 0,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": "u",
+            "endBeats": 112,
+            "duration": 2,
+            "color1": "#00FF00",
+            "color2": "#00FF00",
+            "speed": 0.7
+        },
+        {
+            "symbol": " ",
+            "endBeats": 114,
+            "duration": 0,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        },
+        {
+            "symbol": " ",
+            "endBeats": 114,
+            "duration": 1,
+            "color1": "blue",
+            "color2": "blue",
+            "speed": 0.7
+        }
+    ]
+}

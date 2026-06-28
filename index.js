@@ -39,8 +39,20 @@ const keyboard = {
 	"," : false,
 	"." : false,
 	"/" : false, 
+	"0" : false,
 	"1" : false,
 	"2" : false, 
+	"3" : false, 
+	"9" : false,
+}
+const keyboardPress = {}
+Object.assign(keyboardPress, keyboard);
+
+function clearKeyboard(){
+	for (const key in keyboard){
+		keyboard[key] = false;
+		keyboardPress[key] = false;
+	}
 }
 
 const defaultLayout = [
@@ -63,9 +75,10 @@ const defaultSettings = {
 	anticipateChar : true,
 	anticipateKey : false,
 	msPerBeat : 300,
+	keyTimingOffset : 0,
 };
 
-const songs = { //a Song object is a list of a series of keys, each with a specified [character, duration, *color1, *color2, *speed,]
+const songs = { //(OBSOLETE) a Song object is a list of a series of keys, each with a specified [character, duration, *color1, *color2, *speed,]
 	"linnea" : [
 	['m', 2, '#0000FF', 'blue'], ['.', 6, 'blue', 'blue'], ['j', 2], ['l', 6], ['u', 2, '#00FF00', '#00FF00'], ['o', 14, '#00FF00', '#00FF00'], ['z', 2, 'blue', 'blue'], ['c', 6, 'blue', 'blue'], ['a', 2], ['d', 6], ['q', 2, '#00FF00', '#00FF00'], ['e', 14, '#00FF00', '#00FF00'], ['z', 0, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['c', 0, 'blue', 'blue'], ['.', 2, 'blue', 'blue'], ['v', 4, 'blue', 'blue'], ['a', 0], ['j', 2], ['d', 0], ['l', 2], ['f', 4], ['q', 0, '#00FF00', '#00FF00'], ['u', 2, '#00FF00', '#00FF00'], ['e', 0, '#00FF00', '#00FF00'], ['o', 14, '#00FF00', '#00FF00'], ['z', 0, 'blue', 'blue'], ['m', 2, 'blue', 'blue'], ['c', 0, 'blue', 'blue'], ['.', 2, 'blue', 'blue'], ['/', 4, 'blue', 'blue'], ['a', 0], ['j', 2], ['d', 0], ['l', 2], [';', 4], ['q', 0, '#00FF00', '#00FF00'], ['u', 2, '#00FF00', '#00FF00'], [' ', 0, 'blue', 'blue']
 	],
@@ -261,12 +274,13 @@ function storeValue(key, value){
 function parseValue(key){
 	return JSON.parse(localStorage.getItem(key));
 }
-
+//PRE-SONG VALUES IMPORTANTN!!! MODIFY THESE WHENEVER ADDING A NEW SONG
 const goals = {
 	"linnea" : 3000,
 	"Sunny_Day" : 10000,
 	"Fallen_Down" : 30000, 
-	"Field_of_Memories" : 45000, 
+	"Field_of_Memories" : 40000, 
+	"linnea" : 67,
 	"My_Time" : 30000, 
 };
 
@@ -275,6 +289,7 @@ const highScores = {
 	"Sunny_Day" : 0,
 	"Fallen_Down" : 0,
 	"Field_of_Memories" : 0,
+	"linnea_edited" : 0,
 	"My_Time" : 0,
 }
 
@@ -283,6 +298,7 @@ const maxScores = {
 	"Sunny_Day" : 0,
 	"Fallen_Down" : 0,
 	"Field_of_Memories" : 0,
+	"linnea_edited": 0,
 	"My_Time" : 0,
 }
 
@@ -297,6 +313,7 @@ function refreshLocked(){
 		"Sunny_Day" : !(highScores["linnea"] > goals["linnea"]), 
 		"Fallen_Down" : !(highScores["Sunny_Day"] > goals["Sunny_Day"]),
 		"Field_of_Memories" : !(highScores["Fallen_Down"] > goals["Fallen_Down"]),
+		"linnea_edited" : !(highScores["Field_of_Memories"] > goals["Field_of_Memories"]), 
 		"My_Time" : true, 
 	}
 }
@@ -314,6 +331,9 @@ class Slideshow {
 		this.playing = false; //if user is currently playing a game
 		this.globalAlpha = 1;
 		this.loadWait = false;
+
+		this.editing = false;
+
 		this.timers = {
 			idle : 0,
 			slide : 0, 
@@ -324,7 +344,7 @@ class Slideshow {
 			zoomOut2 : 0,
 		};
 		
-		this.transform = {
+		this.transform = {//based on transformation matrix
 			a : 1,
 			d : 1,
 			e : 0,
@@ -414,12 +434,11 @@ class Slideshow {
 		
 		ctx.restore();
 	}
-	loop(){		
+	loop(){		 
 		ctx.save();
 		
 		//animations
 		const slidei = this.slides[this.index];
-		
 		switch (this.currentAnimation){
 			case null:
 				{
@@ -461,6 +480,19 @@ class Slideshow {
 					ctx.fillStyle = "white";
 					ctx.fill();
 					ctx.closePath();
+
+					//allow toggle editing
+					//if detected keypress "0" then toggle editing
+					if (keyboard["0"]) this.editing = true;
+					else if (keyboard["9"]) this.editing = false;
+					if (this.editing){
+						//draw "EDITING" in the top right corner of the screen
+						ctx.font = `40px merriweather`;
+						ctx.globalAlpha = 1;
+						ctx.textAlign = "left";
+						ctx.fillStyle = "white";
+						ctx.fillText("EDITING", 20, 40);
+					}
 					
 					if (!locked[slidei[0].songname] && slidei[1]){//if it's currently being shown as locked but is actually unlocked, run unlocking animation
 						this.animationLock = true;
@@ -531,7 +563,7 @@ class Slideshow {
 						this.currentAnimation = null;
 						this.timers.idle = getTime();
 						this.animationLock = false;
-						sessionStorage.setItem("KeyboardSmash/slideIndex", this.index)
+						sessionStorage.setItem("KeyboardSmash/slideIndex", this.index);
 					}
 					break;
 				}
@@ -592,13 +624,19 @@ class Slideshow {
 					if (percentTime2 >= 1.1){
 						//fetch data from .json file
 						if (slidei[0].dataLoaded){
-							this.currentAnimation = "started";
+							
 							this.started = true;
 							this.timers.fadeStart = getTime();
 							slidei[0].background.color1 = slidei[2];
 							slidei[0].background.color2 = slidei[3];
-							slidei[0].start();
 							
+							if (this.editing){
+								this.currentAnimation = "editing";
+								slidei[0].editStart();
+								break;
+							}
+							this.currentAnimation = "started";
+							slidei[0].start();
 							break;
 						}
 						if (this.loadWait){
@@ -612,6 +650,7 @@ class Slideshow {
 							slidei[0].officialName = songData.officialName;
 							slidei[0].songAuthor = songData.songAuthor; 
 							slidei[0].dataLoaded = true;
+							slidei[0].editing.isEditing = this_.editing;
 							Object.assign(slidei[0].settings, songData.settings);
 							this_.loadWait = false;
 						});
@@ -624,14 +663,15 @@ class Slideshow {
 				{
 					const deltaTime = getTime() - this.timers.fadeStart;
 					const percentTime = deltaTime / 1000;
-					
+
+					this.drawSlideBackground(this.index);
 					ctx.font = "30px bold merriweather";
 					ctx.textAlign = "center";
 					ctx.globalAlpha = Math.tanh(percentTime);
 					ctx.fillText(`"${slidei[0].officialName}" by ${slidei[0].songAuthor}`, canvas.width / 2, canvas.height / 4);
 					if (slidei[0].highScore <= goals[slidei[0].songname]) ctx.fillText(`Get a score of ${goals[slidei[0].songname]} or higher to unlock next level`, canvas.width / 2, canvas.height / 4 + 40);
 					
-					ctx.globalAlpha = Math.max(Math.tanh(percentTime - 1), 0);
+					ctx.globalAlpha = Math.max(Math.tanh(percentTime - 1), 0); // this applies to the draw loop of slidei[0]
 					
 					slidei[0].loop();
 					if (slidei[0].ended){
@@ -641,6 +681,28 @@ class Slideshow {
 					}
 					ctx.restore();
 					return;
+				}
+			case "editing":
+				{
+					//const deltaTime = slidei[0].getTime();
+					
+					ctx.globalAlpha = 1;
+					this.drawSlideBackground(this.index);
+					slidei[0].edit();
+
+					if (slidei[0].editing){
+						ctx.font = "30px bold merriweather";
+						ctx.textAlign = "center";
+						ctx.fillStyle = "white";
+						ctx.fillText(`You are editing this song. "1"-crawl, "2"-back, "3"-fwd, "4"-pause/unpause, "9"-exit, "0"-export.`, canvas.width / 2, canvas.height / 4 + 40);
+						ctx.fillText(`"${slidei[0].officialName}" by ${slidei[0].songAuthor}`, canvas.width / 2, canvas.height / 4);
+					} 
+					if (slidei[0].ended){
+						slidei[0].started = false;
+						this.timers.zoomOut1 = getTime();
+						this.currentAnimation = "zoomOut1";
+					}
+					break;
 				}
 			case "endPause":
 				{
@@ -657,6 +719,11 @@ class Slideshow {
 						this.currentAnimation = "fadeScore";
 						slidei[0].started = false;
 					}
+					break;
+				}
+			case "editingEndPause":
+				{
+					
 					break;
 				}
 			case "fadeScore":
@@ -804,7 +871,7 @@ class Slideshow {
 				
 			default:
 				{}
-		}
+		} 
 		ctx.restore();		
 	}
 }
@@ -830,6 +897,17 @@ class Game {
 		};
 		this.settings = structuredClone(defaultSettings);
 		
+		
+		this.editing = {
+			isEditing : false,
+			newKeyDefault : {
+				speed : 1,
+				color1 : "white",
+				color2 : "white",
+			},
+			editingTimeInBeats : 0,
+		}
+
 		this.started = false;
 		this.ended = false;
 		this.dataLoaded = false; 
@@ -837,7 +915,23 @@ class Game {
 		this.baseStartTime = 0;
 	}
 	getTime(){
-		return this.songfile.currentTime * 1000 - 5000; //return milliseconds
+		return this.songfile.currentTime * 1000 - 5000 + this.settings.keyTimingOffset; //return milliseconds
+	}
+	getTimeInBeats(){
+		return this.getTime() / this.settings.msPerBeat;
+	}
+	setTime(t){
+		this.songfile.currentTime = (t + 5000 - this.settings.keyTimingOffset)*0.001;
+		return (t + 5000 - this.settings.keyTimingOffset)*0.001;
+	}
+	setTimeInBeats(b){
+		return this.setTime(this.settings.msPerBeat * b);
+	}
+	convMsToBeats(t){
+		return t / this.settings.msPerBeat;
+	}
+	convBeatsToMs(b){
+		return b * this.settings.msPerBeat;
 	}
 	start(){
 		const charToIndex = this.keyboard.buttonDict;
@@ -871,9 +965,11 @@ class Game {
 		}
 		
 		const this_ = this;
-		
+		if (this_.songfile !== null) return;
 		this_.songfile = new Audio("SongFiles/"+this_.songname+".mp3");
 		this_.songfile.addEventListener("canplaythrough", function(e){
+			if (this_.started) return;
+			console.log("canplaythrough");
 			this_.songfile.playbackRate = 1;
 			this_.songfile.play();
 			this_.started = true;
@@ -935,6 +1031,163 @@ class Game {
 			}
 		}
 	}
+	editStart(){
+		const charToIndex = this.keyboard.buttonDict;
+		this.ended = false;
+
+		let endTime = 0;
+		let endBeats = 0;
+		for (const note of this.song){
+			
+			const chr = note["symbol"];
+			const duration = note["duration"] * this.settings.msPerBeat;
+			const color1 = note["color1"];
+			const color2 = note["color2"];
+			const speed = note["speed"];
+			
+			const btnIndex = charToIndex[chr];
+			this.keyboard.buttons[btnIndex].addKey(new Key(chr, color1, endTime, speed, color2, this.settings.colorStyle, this.settings.textColor, this.settings.strokeColor, this.settings.glowColor, endBeats));
+			
+			endTime += duration;
+			endBeats += note["duration"];
+		}
+		
+		const this_ = this;
+
+		if (this_.started) return;
+
+		const startEditing = function(){
+			this_.songfile.pause();
+
+			this_.editing.editingTimeInBeats = Math.ceil(this_.getTimeInBeats());
+			this_.editing.isEditing = true;
+			this_.started = true;
+		}
+
+		if (this_.songLoaded){
+			startEditing();
+			return; 
+		}
+		
+		if (this_.songfile !== null) return;
+
+		this_.songfile = new Audio("SongFiles/"+this_.songname+".mp3");
+		this_.songfile.addEventListener("canplaythrough", function(e){
+			if (this_.started) return;
+			startEditing();
+			this_.songLoaded = true;
+		});
+	}
+	edit(){
+		if (!this.started) return;
+		ctx.save();
+	
+		const background = ctx.createLinearGradient(0, 0, 0, canvas.height);
+		background.addColorStop(0, this.background.color1);
+		background.addColorStop(1, this.background.color2);
+		ctx.fillStyle = background;
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		ctx.textAlign = "left";
+		ctx.fillStyle = "white";
+		ctx.font = "50px bold merriweather";		
+		ctx.fillText(`Beats since start: ${this.editing.editingTimeInBeats}`, 10, 45);
+
+		ctx.restore();
+		this.keyboard.draw(50, this.getTime());
+
+		if (this.editing.isEditing){
+			let step = 1;
+			if (keyboard['1']) step /= 16;
+			if (keyboardPress['2']){
+				this.editing.editingTimeInBeats -= step;
+			} else if (keyboardPress['3']){
+				this.editing.editingTimeInBeats += step;
+			}
+			this.setTimeInBeats(this.editing.editingTimeInBeats);
+			
+			{//if any key on the keyboard is pressed, insert it
+				for (const btn of this.keyboard.buttons){
+					if (!keyboardPress[btn.c]){
+						continue;
+					}
+					let del = false;
+					for (const key of btn.keys){ 
+						//if any of them have the exact same time as the current beat, then switch del to true
+						if (key.endBeats == this.editing.editingTimeInBeats && !key.deleteself){
+							del = true;
+							key.deleteself = true;
+						}
+					}
+					if (!del){
+						const keySpeed = Number(prompt("speed of New Key: ", this.editing.newKeyDefault.speed));
+						const keyColor1 = prompt("color1 of New Key: ", this.editing.newKeyDefault.color1);
+						const keyColor2 = prompt("color2 of New Key: ", this.editing.newKeyDefault.color2);
+						const colorStyle = this.settings.colorStyle;
+						const textColor = this.settings.textColor;
+						const strokeColor = this.settings.strokeColor; 
+						const glowColor = this.settings.glowColor;
+						const newKey = new Key(btn.c, keyColor1, this.getTime(), keySpeed, keyColor2, colorStyle, textColor, strokeColor, glowColor, this.getTimeInBeats());
+
+						btn.addKey(newKey);
+						
+						this.editing.newKeyDefault.speed = keySpeed;
+						this.editing.newKeyDefault.color1 = keyColor1;
+						this.editing.newKeyDefault.color2 = keyColor2;
+
+						clearKeyboard();
+					}					
+				}
+			}
+
+			if (keyboardPress['4']){
+				this.editing.isEditing = false;
+				this.songfile.play();
+			} 
+			if (keyboardPress['0']){
+				this.exportFile();
+			}
+			if (keyboardPress['9']){
+				this.exportFile();
+				this.ended = true;
+			}
+		} else {
+			if (keyboardPress['4']){
+				this.editing.isEditing = true;
+				this.songfile.pause();
+			}
+			this.editing.editingTimeInBeats = Math.ceil(this.getTimeInBeats());
+		}
+	}
+	exportFile(){
+		if (!this.editing.isEditing) return;
+		let song = {
+			"officialName" : this.officialName, 
+			"songAuthor" : this.songAuthor, 
+			"difficulty" : prompt("Enter difficulty of your song: ","customized"), //change later 
+			"settings" : {
+				"colorStyle" : null, 
+				"textColor" : null, 
+				"strokeColor" : null, 
+				"glowColor" : null, 
+				"msPerBeat" : null
+			},
+			keys : this.keyboard.exportKeys(),
+		};
+		for (const setting in song["settings"]){
+			song["settings"][setting] = this.settings[setting];
+		}
+		const blob = new Blob([JSON.stringify(song,null,4)],{type : 'application/json'});
+		const a = document.createElement('a');
+		const url = URL.createObjectURL(blob)
+		a.href = url;
+		a.download = `${this.songname}_edited.json`;
+		a.click();
+		URL.revokeObjectURL(url);
+
+		clearKeyboard();
+
+		return song;
+	}
 }
 
 class Keyboard {
@@ -964,6 +1217,29 @@ class Keyboard {
 		for (const btn of this.buttons){
 			btn.tick(gT);
 		}
+	}
+	exportKeys(){//used in editing, export as .json file. this will not work outside an editing environment
+		let newSong = [];
+		for (const btn of this.buttons){
+			for (const key of btn.keys){
+				if (key.deleteself) continue;
+				let note = {
+					symbol : btn.c,
+					endBeats : key.endBeats, 
+					duration : 1, 
+					color1 : key.color1,
+					color2 : key.color2,
+					speed : key.speed,
+				};
+				newSong.push(note);
+			}
+		}
+		newSong.sort((a, b) => a.endBeats - b.endBeats);
+		for (let i = 0; i < newSong.length - 1; i++){
+			newSong[i].duration = newSong[i+1].endBeats - newSong[i].endBeats;
+		}
+		console.log(newSong);
+		return newSong;
 	}
 }
 
@@ -1099,6 +1375,7 @@ class KeyButton {
 		{
 			const newKeys = [];
 			for (const key of this.keys){
+				key.tick(gT);
 				if (!key.deleteself){newKeys.push(key)}
 			}
 			this.keys = newKeys;
@@ -1107,7 +1384,7 @@ class KeyButton {
 		if (keyboard[this.c]){
 			if (!this.pressed){
 				for (const key of this.keys){
-					if (Math.abs(key.endTime - gT) <= 100 || Math.abs(key.xpos - this.xpos) <= 50 && Math.abs(key.ypos - this.ypos) <= 50){
+					if (Math.abs(key.endTime - gT) <= 100 || Math.abs(key.xpos - this.xpos) <= 50 && Math.abs(key.ypos - this.ypos) <= 50){//this is inefficient rn, speed up later
 						this.pressedSuccessfully = true;
 						key.deleteself = true;
 						this.parentKeyboard.addScore += 100;
@@ -1127,7 +1404,7 @@ class KeyButton {
 }
 
 class Key {
-	constructor(character, color1, endTime=0, speed=0.7, color2=null, colorStyle="solid", textColor="#FFFFFF", strokeColor="#FFFFFF", glowColor="#FFFFFF"){
+	constructor(character, color1, endTime=0, speed=0.7, color2=null, colorStyle="solid", textColor="#FFFFFF", strokeColor="#FFFFFF", glowColor="#FFFFFF", endBeats){
 		this.c = character;
 		this.color1 = color1;
 		this.color2 = color2;
@@ -1145,11 +1422,12 @@ class Key {
 			ypos : 0
 		}
 		this.endTime = endTime;
+		this.endBeats = endBeats;
 		this.direction = 1.5 * Math.PI;
 		this.deleteself = false;
 	}
 	draw(width, gT){
-		
+		if (this.deleteself) return;
 		const currentTime = gT;
 		const deltaTime = this.endTime - currentTime;
 		this.xpos = this.destination.xpos + Math.cos(this.direction) * deltaTime * this.speed;
@@ -1160,10 +1438,7 @@ class Key {
 		
 		if (deltaTime < 0){
 			this.fade = Math.max(0, 1 + deltaTime / 250);
-			if (deltaTime < -250){
-				this.deleteself = true;
-			}
-		} 
+		} else this.fade = 1;
 		
 		ctx.save();
 		
@@ -1258,6 +1533,13 @@ class Key {
 		
 		ctx.restore();
 	}
+	tick(gT){
+		const currentTime = gT;
+		const deltaTime = this.endTime - currentTime;
+		if (deltaTime < -250){
+			this.deleteself = true;
+		}
+	}
 }
 
 canvas.addEventListener("mousemove", function(e){
@@ -1266,7 +1548,8 @@ canvas.addEventListener("mousemove", function(e){
 });
 
 addEventListener("keydown", function(e){
-	keyboard[e.key] = true;	
+	keyboard[e.key] = true;
+	keyboardPress[e.key] = true;	
 });
 
 addEventListener("keyup", function(e){
@@ -1311,6 +1594,9 @@ Field_of_Memories.difficulty = "hard";
 	msPerBeat : 462, 
 };*/
 
+const linnea_edited = new Game("linnea_edited", kb);
+linnea_edited.difficulty = "customized";
+
 //create My Time game
 const My_Time = new Game("My_Time", kb); 
 My_Time.difficulty = "hard"; 
@@ -1323,6 +1609,7 @@ SS.slides = [
 	[Sunny_Day, locked.Sunny_Day, "#FFDDDD", "#333333"], 
 	[Fallen_Down, locked.Fallen_Down, "#000000", "#222222"], 
 	[Field_of_Memories, locked.Field_of_Memories, "#CC9911", "#000000"],
+	[linnea_edited, locked.linnea_edited, "#444444", "#BBBBBB"], 
 	[My_Time, locked.My_Time, "#AA00AA", "#33AAFF"]
 ];
 SS.slidenum = SS.slides.length;
@@ -1331,6 +1618,7 @@ if (sessionStorage.getItem("KeyboardSmash/slideIndex") !== null){
 }
 function mainloop(){
 	SS.loop();
+	for (const key in keyboardPress) keyboardPress[key] = false;
 }
 
 setInterval(mainloop, 10);
