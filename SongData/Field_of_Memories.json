@@ -2,6 +2,7 @@
     "officialName": "Field of Memories",
     "songAuthor": "Waterflame",
     "difficulty": "hard",
+    "goal" : 40000, 
     "settings": {
         "colorStyle": "radialGradient",
         "textColor": "grey",

@@ -2,6 +2,7 @@
 	"officialName" : "linnea", 
 	"songAuthor" : "unknown", 
 	"difficulty" : "easy", 
+	"goal" : 3000, 
 	"settings" : {
 		"colorStyle" : "horizontalGradient", 
 		"textColor" : "#FFFFFF", 

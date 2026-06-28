@@ -1,7 +1,8 @@
 {
 	"officialName" : "Fallen Down (Reprise)", 
 	"songAuthor" : "Toby Fox", 
-	"difficulty" : "normal", 
+	"difficulty" : "normal",
+	"goal" : 30000, 
 	"settings" : {
 		"colorStyle" : "horizontalGradient", 
 		"textColor" : "#FFFFFF", 

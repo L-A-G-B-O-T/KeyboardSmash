@@ -275,47 +275,39 @@ function parseValue(key){
 	return JSON.parse(localStorage.getItem(key));
 }
 //PRE-SONG VALUES IMPORTANTN!!! MODIFY THESE WHENEVER ADDING A NEW SONG
-const goals = {
-	"linnea" : 3000,
-	"Sunny_Day" : 10000,
-	"Fallen_Down" : 30000, 
-	"Field_of_Memories" : 40000, 
-	"blank" : 0,
-	"My_Time" : 30000, 
-};
+let songOrder = [
+	"linnea",
+	"Sunny_Day",
+	"Fallen_Down",
+	"Field_of_Memories",
+	"blank",
+	"My_Time", 
+];
 
-const highScores = {
-	"linnea" : 0,
-	"Sunny_Day" : 0,
-	"Fallen_Down" : 0,
-	"Field_of_Memories" : 0,
-	"blank" : 0,
-	"My_Time" : 0,
-}
+const highScores = {};
+const maxScores = {};
+const goals = {};
 
-const maxScores = {
-	"linnea" : 0,
-	"Sunny_Day" : 0,
-	"Fallen_Down" : 0,
-	"Field_of_Memories" : 0,
-	"blank": 0,
-	"My_Time" : 0,
+for (const song of songOrder){
+	highScores[song] = 0;
+	maxScores[song] = 0;
+	goals[song] = Number.MAX_SAFE_INTEGER;
 }
 
 Object.assign(highScores, parseValue("KeyboardSmash/highScores"));
 Object.assign(maxScores, parseValue("KeyboardSmash/maxScores"));
+Object.assign(goals, parseValue("KeyboardSmash/goals"));
 
 var locked = {};
 
 function refreshLocked(){
-	locked = {
-		"linnea" : false, 
-		"Sunny_Day" : !(highScores["linnea"] > goals["linnea"]), 
-		"Fallen_Down" : !(highScores["Sunny_Day"] > goals["Sunny_Day"]),
-		"Field_of_Memories" : !(highScores["Fallen_Down"] > goals["Fallen_Down"]),
-		"blank" : !(highScores["Field_of_Memories"] > goals["Field_of_Memories"]), 
-		"My_Time" : true, 
+	locked[songOrder[0]] = false;
+	for (let i = 1; i < songOrder.length; i++){
+		const prevSong = songOrder[i-1];
+		const currSong = songOrder[i];
+		locked[currSong] = !(highScores[prevSong] > goals[prevSong]);
 	}
+	locked['My_Time'] = true;
 }
 
 refreshLocked();
@@ -651,6 +643,8 @@ class Slideshow {
 							slidei[0].songAuthor = songData.songAuthor; 
 							slidei[0].dataLoaded = true;
 							slidei[0].editing.isEditing = this_.editing;
+							goals[slidei[0].songname] = songData.goal;
+							storeValue("KeyboardSmash/goals", goals);
 							Object.assign(slidei[0].settings, songData.settings);
 							this_.loadWait = false;
 						});
@@ -1559,59 +1553,41 @@ addEventListener("keyup", function(e){
 const kb = new Keyboard();
 kb.addButtons(defaultLayout);
 
-//create Linnea Game
-const linnea = new Game("linnea", kb); 
-linnea.difficulty = "easy";
-//linnea.songAuthor = "unknown";
+const difficulties = {
+	"linnea" : "easy",
+	"Sunny_Day" : "easy",
+	"Fallen_Down" : "normal",
+	"Field_of_Memories" : "hard",
+	"blank" : "customized",
+	"My_Time" : "hard",
+};
 
-//create Sunny Day Game
-const Sunny_Day = new Game("Sunny_Day", kb); 
-Sunny_Day.difficulty = "easy"; 
-//Sunny_Day.songAuthor = "unknown"; 
-//Sunny_Day.settings.msPerBeat = 250;
+const backgroundColors = {
+	"linnea" : ["#444444", "#BBBBBB"],
+	"Sunny_Day" : ["#FFDDDD", "#333333"],
+	"Fallen_Down" : ["#000000", "#222222"],
+	"Field_of_Memories" : ["#CC9911", "#000000"],
+	"blank" : ["#444444", "#BBBBBB"],
+	"My_Time" : ["#AA00AA", "#33AAFF"],
+}
 
-//create Fallen Down Game
-const Fallen_Down = new Game("Fallen_Down", kb);
-Fallen_Down.difficulty = "normal";
-//Fallen_Down.songAuthor = "Toby Fox";
-//Fallen_Down.settings.speed = 0.5;
-//Fallen_Down.settings.msPerBeat = 272.7;
-
-//create Field of Memories Game
-const Field_of_Memories = new Game("Field_of_Memories", kb);
-Field_of_Memories.difficulty = "hard";
-//Field_of_Memories.songAuthor = "Waterflame";
-/*Field_of_Memories.settings = {
-	color1 : "#FFFDE0",
-	speed : 0.7,
-	color2 : "#CCCCCC",
-	colorStyle : "radialGradient",
-	textColor : "black", 
-	strokeColor : "#FFFDE0", 
-	glowColor : "#FFFDE0",
-	anticipateChar : false,
-	anticipateKey : true,
-	msPerBeat : 462, 
-};*/
-
-const blank = new Game("blank", kb);
-blank.difficulty = "customized";
+const games = {};
+for (const song of songOrder){
+	games[song] = new Game(song, kb);
+	games[song].difficulty = difficulties[song];
+}
 
 //create My Time game
-const My_Time = new Game("My_Time", kb); 
-My_Time.difficulty = "hard"; 
 //My_Time.settings.speed = 0.6;
 //My_Time.songAuthor = "bo en";
 
 const SS = new Slideshow(); 
-SS.slides = [
-	[linnea, locked.linnea, "#444444", "#BBBBBB"], 
-	[Sunny_Day, locked.Sunny_Day, "#FFDDDD", "#333333"], 
-	[Fallen_Down, locked.Fallen_Down, "#000000", "#222222"], 
-	[Field_of_Memories, locked.Field_of_Memories, "#CC9911", "#000000"],
-	[blank, locked.blank, "#444444", "#BBBBBB"], 
-	[My_Time, locked.My_Time, "#AA00AA", "#33AAFF"]
-];
+SS.slides = [];
+
+for (const song of songOrder){
+	SS.slides.push([games[song], locked[song], backgroundColors[song][0], backgroundColors[song][1]]);
+}
+
 SS.slidenum = SS.slides.length;
 if (sessionStorage.getItem("KeyboardSmash/slideIndex") !== null){
 	SS.index = JSON.parse(sessionStorage.getItem("KeyboardSmash/slideIndex"));

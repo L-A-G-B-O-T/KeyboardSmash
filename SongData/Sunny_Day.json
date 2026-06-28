@@ -2,6 +2,7 @@
 	"officialName" : "Sunny Day", 
 	"songAuthor" : "unknown", 
 	"difficulty" : "easy", 
+	"goal" : 10000, 
 	"settings" : {
 		"colorStyle" : "horizontalGradient", 
 		"textColor" : "#FFFFFF", 
