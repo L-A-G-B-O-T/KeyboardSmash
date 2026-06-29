@@ -1565,12 +1565,14 @@ canvas.addEventListener("mousemove", function(e){
 });
 
 addEventListener("keydown", function(e){
-	keyboard[e.key] = true;
-	keyboardPress[e.key] = true;	
+	const k = e.key.toLowerCase();
+	keyboard[k] = true;
+	keyboardPress[k] = true;	
 });
 
 addEventListener("keyup", function(e){
-	keyboard[e.key] = false;
+	const k = e.key.toLowerCase();
+	keyboard[k] = false;
 });
 
 const kb = new Keyboard();
