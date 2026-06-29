@@ -639,6 +639,7 @@ class Slideshow {
 						readTextFile("SongData/"+slidei[0].songname+".json", function(txt){ //loads the data file if not already loaded
 							const songData = JSON.parse(txt);
 							slidei[0].song = songData.keys;
+							if (songData.lyrics !== undefined) slidei[0].lyrics = songData.lyrics;
 							slidei[0].officialName = songData.officialName;
 							slidei[0].songAuthor = songData.songAuthor; 
 							slidei[0].dataLoaded = true;
@@ -875,6 +876,7 @@ class Game {
 		this.keyboard = keyboard;
 		this.songfile = null;
 		this.song = null;
+		this.lyrics = undefined; // list of lyric objects {startBeat: int, endBeat: int, font: String, color: String, text: String, yPos: int}
 		this.songname = s;
 		this.difficulty = null;
 		
@@ -891,13 +893,12 @@ class Game {
 		};
 		this.settings = structuredClone(defaultSettings);
 		
-		
 		this.editing = {
 			isEditing : false,
 			newKeyDefault : {
 				speed : 1,
-				color1 : "white",
-				color2 : "white",
+				color1 : "black",
+				color2 : "black",
 			},
 			editingTimeInBeats : 0,
 		}
@@ -974,24 +975,11 @@ class Game {
 		if (!this.started){
 			return;
 		}
-		ctx.save();
-	
-		const background = ctx.createLinearGradient(0, 0, 0, canvas.height);
-		background.addColorStop(0, this.background.color1);
-		background.addColorStop(1, this.background.color2);
-		ctx.fillStyle = background;
-		ctx.fillRect(0, 0, canvas.width, canvas.height);
-		ctx.textAlign = "left";
-		ctx.fillStyle = `rgba(${255 - Math.max(0, this.scoreShake * 255)}, ${255 - Math.max(0, this.scoreShake * -255)}, ${255 - Math.abs(this.scoreShake * 255)}, 1)`;
-		ctx.font = "50px bold merriweather";		
-		ctx.fillText(this.currentScore, 10 + (Math.random() - 0.5) * this.scoreShake * 10, 45 + (Math.random() - 0.5) * this.scoreShake * 10);
-		ctx.textAlign = "right";
-		ctx.fillText(`${this.percentScore}%`, canvas.width - 10 + (Math.random() - 0.5) * this.scoreShake * 10, 45 + (Math.random() - 0.5) * this.scoreShake * 10);
-		
-		
-		ctx.restore();
-		this.keyboard.draw(50, this.getTime());
-		this.keyboard.tick(this.getTime());
+		const gT = this.getTime();
+		const gTIB = this.getTimeInBeats();
+
+		this.playDraw(gT, gTIB);
+		this.keyboard.tick(gT);
 		this.scoreShake *= 0.9;
 		if (!this.songfile.ended){
 			
@@ -1024,6 +1012,35 @@ class Game {
 				refreshLocked();
 			}
 		}
+	}
+	drawLyrics(gT, gTIB){
+		for (const lyric of this.lyrics){//draw lyrics
+			ctx.fillStyle = lyric.color; 
+			ctx.font = lyric.font;
+			ctx.textAlign = "center";
+			ctx.fillText(lyric.text, canvas.width / 2, lyric.yPos);
+		}
+	}
+	playDraw(gT, gTIB){
+		ctx.save();
+	
+		const background = ctx.createLinearGradient(0, 0, 0, canvas.height);
+		background.addColorStop(0, this.background.color1);
+		background.addColorStop(1, this.background.color2);
+		ctx.fillStyle = background;
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		ctx.textAlign = "left";
+		ctx.fillStyle = `rgba(${255 - Math.max(0, this.scoreShake * 255)}, ${255 - Math.max(0, this.scoreShake * -255)}, ${255 - Math.abs(this.scoreShake * 255)}, 1)`;
+		ctx.font = "50px bold merriweather";		
+		ctx.fillText(this.currentScore, 10 + (Math.random() - 0.5) * this.scoreShake * 10, 45 + (Math.random() - 0.5) * this.scoreShake * 10);
+		ctx.textAlign = "right";
+		ctx.fillText(`${this.percentScore}%`, canvas.width - 10 + (Math.random() - 0.5) * this.scoreShake * 10, 45 + (Math.random() - 0.5) * this.scoreShake * 10);
+		
+		if (this.lyrics !== undefined) this.drawLyrics(gT, gTIB);	
+
+		ctx.restore();
+
+		this.keyboard.draw(50, gT);
 	}
 	editStart(){
 		const charToIndex = this.keyboard.buttonDict;
@@ -1074,20 +1091,10 @@ class Game {
 	}
 	edit(){
 		if (!this.started) return;
-		ctx.save();
-	
-		const background = ctx.createLinearGradient(0, 0, 0, canvas.height);
-		background.addColorStop(0, this.background.color1);
-		background.addColorStop(1, this.background.color2);
-		ctx.fillStyle = background;
-		ctx.fillRect(0, 0, canvas.width, canvas.height);
-		ctx.textAlign = "left";
-		ctx.fillStyle = "white";
-		ctx.font = "50px bold merriweather";		
-		ctx.fillText(`Beats since start: ${this.editing.editingTimeInBeats}`, 10, 45);
-
-		ctx.restore();
-		this.keyboard.draw(50, this.getTime());
+		const gT = this.getTime();
+		const gTIB = this.getTimeInBeats();
+		
+		this.editDraw(gT, gTIB);
 
 		if (this.editing.isEditing){
 			let step = 1;
@@ -1120,7 +1127,7 @@ class Game {
 						const textColor = this.settings.textColor;
 						const strokeColor = this.settings.strokeColor; 
 						const glowColor = this.settings.glowColor;
-						const newKey = new Key(btn.c, keyColor1, this.getTime(), keySpeed, keyColor2, colorStyle, textColor, strokeColor, glowColor, this.getTimeInBeats());
+						const newKey = new Key(btn.c, keyColor1, gT, keySpeed, keyColor2, colorStyle, textColor, strokeColor, glowColor, gTIB);
 
 						btn.addKey(newKey);
 						
@@ -1149,8 +1156,24 @@ class Game {
 				this.editing.isEditing = true;
 				this.songfile.pause();
 			}
-			this.editing.editingTimeInBeats = Math.ceil(this.getTimeInBeats());
+			this.editing.editingTimeInBeats = Math.ceil(gTIB);
 		}
+	}
+	editDraw(gT, gTIB){
+		ctx.save();
+	
+		const background = ctx.createLinearGradient(0, 0, 0, canvas.height);
+		background.addColorStop(0, this.background.color1);
+		background.addColorStop(1, this.background.color2);
+		ctx.fillStyle = background;
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		ctx.textAlign = "left";
+		ctx.fillStyle = "white";
+		ctx.font = "50px bold merriweather";		
+		ctx.fillText(`Beats since start: ${this.editing.editingTimeInBeats}`, 10, 45);
+
+		ctx.restore();
+		this.keyboard.draw(50, gT);
 	}
 	exportFile(){
 		if (!this.editing.isEditing) return;
