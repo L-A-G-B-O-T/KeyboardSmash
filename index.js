@@ -31,10 +31,10 @@ const keyboard = {
 	y : false,
 	z : false,
 	" " : false,
-	ArrowUp : false,
-	ArrowDown : false,
-	ArrowRight : false,
-	ArrowLeft : false,
+	arrowup : false,
+	arrowdown : false,
+	arrowright : false,
+	arrowleft : false,
 	";" : false,
 	"," : false,
 	"." : false,
@@ -60,8 +60,8 @@ const defaultLayout = [
 	["a", 100, 460], ["s", 160, 460], ["d", 220, 460], ["f", 280, 460], ["g", 340, 460], ["h", 400, 460], ["j", 460, 460], ["k", 520, 460], ["l", 580, 460], [";", 640, 460], 
 	["z", 130, 520], ["x", 190, 520], ["c", 250, 520], ["v", 310, 520], ["b", 370, 520], ["n", 430, 520], ["m", 490, 520], [",", 550, 520], [".", 610, 520], ["/", 670, 520], 
 	[" ", 250, 580], 
-	["ArrowUp", 960, 460], 
-	["ArrowLeft", 900, 520], ["ArrowDown", 960, 520], ["ArrowRight", 1020, 520]
+	["arrowup", 960, 460], 
+	["arrowleft", 900, 520], ["arrowdown", 960, 520], ["arrowright", 1020, 520]
 ];
 
 const defaultSettings = {
@@ -305,9 +305,8 @@ function refreshLocked(){
 	for (let i = 1; i < songOrder.length; i++){
 		const prevSong = songOrder[i-1];
 		const currSong = songOrder[i];
-		locked[currSong] = !(highScores[prevSong] > goals[prevSong]);
+		locked[currSong] = !(highScores[prevSong] >= goals[prevSong]);
 	}
-	locked['My_Time'] = true;
 }
 
 refreshLocked();
@@ -491,14 +490,14 @@ class Slideshow {
 						this.currentAnimation = "unlock";
 						this.timers.unlock = getTime();
 					}
-					else if (keyboard.ArrowRight){
+					else if (keyboard.arrowright){
 						this.animationLock = true;
 						this.currentAnimation = "slideRight";
 						this.transform.e = canvas.width;
 						this.index = modulo(this.index + 1, this.slidenum);
 						this.timers.slide = getTime();
 					} 
-					else if (keyboard.ArrowLeft){
+					else if (keyboard.arrowleft){
 						this.animationLock = true;
 						this.currentAnimation = "slideLeft";
 						this.transform.e = -canvas.width;
@@ -937,6 +936,7 @@ class Game {
 		storeValue("KeyboardSmash/maxScores", maxScores);
 		
 		let endTime = 0;
+		let endBeats = 0; 
 		for (const note of this.song){
 			
 			const chr = note["symbol"];
@@ -946,8 +946,9 @@ class Game {
 			const speed = note["speed"];
 			
 			const btnIndex = charToIndex[chr];
-			this.keyboard.buttons[btnIndex].addKey(new Key(chr, color1, endTime, speed, color2, this.settings.colorStyle, this.settings.textColor, this.settings.strokeColor, this.settings.glowColor));
+			this.keyboard.buttons[btnIndex].addKey(new Key(chr, color1, endTime, speed, color2, this.settings.colorStyle, this.settings.textColor, this.settings.strokeColor, this.settings.glowColor, endBeats));
 			endTime += duration;
+			endBeats += note["duration"];
 		}
 		
 		this.keyboard.addScore = 0;
@@ -1098,7 +1099,7 @@ class Game {
 
 		if (this.editing.isEditing){
 			let step = 1;
-			if (keyboard['1']) step /= 16;
+			if (keyboard['1']) step /= 8;
 			if (keyboardPress['2']){
 				this.editing.editingTimeInBeats -= step;
 			} else if (keyboardPress['3']){
@@ -1113,8 +1114,8 @@ class Game {
 					}
 					let del = false;
 					for (const key of btn.keys){ 
-						//if any of them have the exact same time as the current beat, then switch del to true
-						if (key.endBeats == this.editing.editingTimeInBeats && !key.deleteself){
+						//if any of them have the exact same time (or in range of 1/16 of a beat perhaps) as the current beat, then switch del to true
+						if (Math.abs(key.endBeats - this.editing.editingTimeInBeats) < 1/16 && !key.deleteself){
 							del = true;
 							key.deleteself = true;
 						}
@@ -1127,7 +1128,7 @@ class Game {
 						const textColor = this.settings.textColor;
 						const strokeColor = this.settings.strokeColor; 
 						const glowColor = this.settings.glowColor;
-						const newKey = new Key(btn.c, keyColor1, gT, keySpeed, keyColor2, colorStyle, textColor, strokeColor, glowColor, gTIB);
+						const newKey = new Key(btn.c, keyColor1, gT, keySpeed, keyColor2, colorStyle, textColor, strokeColor, glowColor, this.editing.editingTimeInBeats);
 
 						btn.addKey(newKey);
 						
@@ -1351,22 +1352,22 @@ class KeyButton {
 				ctx.fillRect(drawX, drawY, rectW, rectH);
 			} else if (this.anticipateChar){
 			switch (this.c){
-				case "ArrowUp":
+				case "arrowup":
 					{
 						fillArrow(drawX + rectW / 2, drawY + rectH / 2, Math.PI / -2, width);
 						break;
 					}
-				case "ArrowDown":
+				case "arrowdown":
 					{
 						fillArrow(drawX + rectW / 2, drawY + rectH / 2, Math.PI / 2, width);
 						break;
 					}
-				case "ArrowLeft":
+				case "arrowleft":
 					{
 						fillArrow(drawX + rectW / 2, drawY + rectH / 2, Math.PI, width);
 						break;
 					}
-				case "ArrowRight":
+				case "arrowright":
 					{
 						fillArrow(drawX + rectW / 2, drawY + rectH / 2, 0, width);
 						break;
@@ -1518,22 +1519,22 @@ class Key {
 		
 		ctx.fillStyle = this.textColor;
 		switch (this.c){
-			case "ArrowUp":
+			case "arrowup":
 				{
 					fillArrow(drawX + rectW / 2, drawY + rectH / 2, Math.PI / -2, width);
 					break;
 				}
-			case "ArrowDown":
+			case "arrowdown":
 				{
 					fillArrow(drawX + rectW / 2, drawY + rectH / 2, Math.PI / 2, width);
 					break;
 				}
-			case "ArrowLeft":
+			case "arrowleft":
 				{
 					fillArrow(drawX + rectW / 2, drawY + rectH / 2, Math.PI, width);
 					break;
 				}
-			case "ArrowRight":
+			case "arrowright":
 				{
 					fillArrow(drawX + rectW / 2, drawY + rectH / 2, 0, width);
 					break;
