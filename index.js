@@ -1626,7 +1626,7 @@ const difficulties = {
 	"Fallen_Down" : "normal",
 	"Field_of_Memories" : "hard",
 	"blank" : "customized",
-	"My_Time" : "hard",
+	"My_Time" : "very hard",
 };
 
 const backgroundColors = {
