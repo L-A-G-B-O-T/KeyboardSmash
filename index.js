@@ -639,13 +639,14 @@ class Slideshow {
 							const songData = JSON.parse(txt);
 							slidei[0].song = songData.keys;
 							if (songData.lyrics !== undefined) slidei[0].lyrics = songData.lyrics;
+							if (songData.events !== undefined) slidei[0].events = songData.events;
 							slidei[0].officialName = songData.officialName;
 							slidei[0].songAuthor = songData.songAuthor; 
 							slidei[0].dataLoaded = true;
 							slidei[0].editing.isEditing = this_.editing;
 							goals[slidei[0].songname] = songData.goal;
 							storeValue("KeyboardSmash/goals", goals);
-							Object.assign(slidei[0].settings, songData.settings);
+							Object.assign(slidei[0].initialSettings, songData.settings);
 							this_.loadWait = false;
 						});
 						this.drawSlideBackground(this.index);
@@ -862,7 +863,6 @@ class Slideshow {
 					}
 					break;
 				}
-				
 			default:
 				{}
 		} 
@@ -875,7 +875,9 @@ class Game {
 		this.keyboard = keyboard;
 		this.songfile = null;
 		this.song = null;
-		this.lyrics = undefined; // list of lyric objects {startBeat: int, endBeat: int, font: String, color: String, text: String, yPos: int}
+		this.lyrics = []; // list of lyric objects {startBeat: Number, endBeat: Number, font: String, color: String, text: String, yPos: Number}
+		this.events = []; //list of Event objects that change a singular setting upon a beat {startBeat: Number, setting : String, value: Any}. must be sorted by startBeat
+		this.tempoChanges = []; //holds references to all the objects in this.events that have this.settingName == "msPerBeat";
 		this.songname = s;
 		this.difficulty = null;
 		
@@ -891,6 +893,7 @@ class Game {
 			color2 : "#0044FF",
 		};
 		this.settings = structuredClone(defaultSettings);
+		this.initialSettings = structuredClone(defaultSettings);
 		
 		this.editing = {
 			isEditing : false,
@@ -912,20 +915,27 @@ class Game {
 		return this.songfile.currentTime * 1000 - 5000 + this.settings.keyTimingOffset; //return milliseconds
 	}
 	getTimeInBeats(){
-		return this.getTime() / this.settings.msPerBeat;
+		const gT = this.getTime();
+		if (this.tempoChanges.length == 0 || this.tempoChanges[0].startTime > gT) return gT / this.initialSettings.msPerBeat;
+		for (let i = this.tempoChanges.length - 1; i >= 0; i--){
+			const tC = this.tempoChanges[i]
+			if (tC.startTime > gT) continue;
+			return tC.startBeat + (gT - tC.startTime) / tC.value;
+		}
+		throw Error("Loop in getTimeInBeats somehow never hit return; this should not happen");
 	}
 	setTime(t){
 		this.songfile.currentTime = (t + 5000 - this.settings.keyTimingOffset)*0.001;
 		return (t + 5000 - this.settings.keyTimingOffset)*0.001;
 	}
 	setTimeInBeats(b){
-		return this.setTime(this.settings.msPerBeat * b);
-	}
-	convMsToBeats(t){
-		return t / this.settings.msPerBeat;
-	}
-	convBeatsToMs(b){
-		return b * this.settings.msPerBeat;
+		if (this.tempoChanges.length == 0 || this.tempoChanges[0].startBeat > b) return this.setTime(this.initialSettings.msPerBeat * b);
+		for (let i = this.tempoChanges.length - 1; i >= 0; i--){
+			const tC = this.tempoChanges[i];
+			if (tC.startBeat > b) continue;
+			return this.setTime(tC.startTime + tC.value * (b - tC.startBeat));
+		}
+		throw Error("Loop in setTimeInBeats somehow never hit return; this should not happen");
 	}
 	start(){
 		const charToIndex = this.keyboard.buttonDict;
@@ -934,11 +944,24 @@ class Game {
 		this.maxScore = this.song.length * 100;
 		maxScores[this.songname] = this.maxScore;
 		storeValue("KeyboardSmash/maxScores", maxScores);
-		
+		Object.assign(this.settings, this.initialSettings);
 		let endTime = 0;
 		let endBeats = 0; 
+		let eventIndex = 0;
 		for (const note of this.song){
-			
+			let currEvent = this.events[eventIndex];
+			while (currEvent !== undefined){ //event manager
+				if (currEvent.startBeat < endBeats) throw EvalError("Event.startBeat must be simulatneous to the beat at which a key is played");
+				if (currEvent.startBeat != endBeats) break;
+				this.settings[currEvent.setting] = currEvent.value;
+				if (currEvent.setting == "msPerBeat"){
+					currEvent.startTime = endTime;
+					this.tempoChanges.push(currEvent);
+				}
+				eventIndex++;
+				currEvent = this.events[eventIndex];
+			}
+
 			const chr = note["symbol"];
 			const duration = note["duration"] * this.settings.msPerBeat;
 			const color1 = note["color1"];
@@ -1037,7 +1060,7 @@ class Game {
 		ctx.textAlign = "right";
 		ctx.fillText(`${this.percentScore}%`, canvas.width - 10 + (Math.random() - 0.5) * this.scoreShake * 10, 45 + (Math.random() - 0.5) * this.scoreShake * 10);
 		
-		if (this.lyrics !== undefined) this.drawLyrics(gT, gTIB);	
+		if (this.lyrics.length != 0) this.drawLyrics(gT, gTIB);	
 
 		ctx.restore();
 
@@ -1047,10 +1070,24 @@ class Game {
 		const charToIndex = this.keyboard.buttonDict;
 		this.ended = false;
 
+		Object.assign(this.settings, this.initialSettings)
 		let endTime = 0;
 		let endBeats = 0;
+		let eventIndex = 0;
 		for (const note of this.song){
-			
+			let currEvent = this.events[eventIndex];
+			while (currEvent !== undefined){ //event manager
+				if (currEvent.startBeat < endBeats) throw EvalError("Event.startBeat must be simulatneous to the beat at which a key is played");
+				if (currEvent.startBeat != endBeats) break;
+				this.settings[currEvent.setting] = currEvent.value;
+				if (currEvent.setting == "msPerBeat"){
+					currEvent.startTime = endTime;
+					this.tempoChanges.push(currEvent);
+				}
+				eventIndex++;
+				currEvent = this.events[eventIndex];
+			}
+
 			const chr = note["symbol"];
 			const duration = note["duration"] * this.settings.msPerBeat;
 			const color1 = note["color1"];
@@ -1151,6 +1188,7 @@ class Game {
 			if (keyboardPress['9']){
 				this.exportFile();
 				this.ended = true;
+				this.songfile.currentTime = this.songfile.duration;
 			}
 		} else {
 			if (keyboardPress['4']){
@@ -1182,6 +1220,7 @@ class Game {
 			"officialName" : this.officialName, 
 			"songAuthor" : this.songAuthor, 
 			"difficulty" : prompt("Enter difficulty of your song: ","customized"), //change later 
+			"goal" : goals[this.songname], 
 			"settings" : {
 				"colorStyle" : null, 
 				"textColor" : null, 
@@ -1189,10 +1228,12 @@ class Game {
 				"glowColor" : null, 
 				"msPerBeat" : null
 			},
+			lyrics : this.lyrics, 
+			events : this.events,
 			keys : this.keyboard.exportKeys(),
 		};
 		for (const setting in song["settings"]){
-			song["settings"][setting] = this.settings[setting];
+			song["settings"][setting] = this.initialSettings[setting];
 		}
 		const blob = new Blob([JSON.stringify(song,null,4)],{type : 'application/json'});
 		const a = document.createElement('a');
