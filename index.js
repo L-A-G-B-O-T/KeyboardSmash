@@ -281,6 +281,8 @@ let songOrder = [
 	"Fallen_Down",
 	"Field_of_Memories",
 	"blank",
+	"Living_Mice", 
+	"Last_Dance", 
 	"My_Time", 
 ];
 
@@ -1626,6 +1628,8 @@ const difficulties = {
 	"Fallen_Down" : "normal",
 	"Field_of_Memories" : "hard",
 	"blank" : "customized",
+	"Living_Mice" : "normal", 
+	"Last_Dance" : "hard",
 	"My_Time" : "very hard",
 };
 
@@ -1635,6 +1639,8 @@ const backgroundColors = {
 	"Fallen_Down" : ["#000000", "#222222"],
 	"Field_of_Memories" : ["#CC9911", "#000000"],
 	"blank" : ["#444444", "#BBBBBB"],
+	"Living_Mice" : ["#24922d", "#be5126"],
+	"Last_Dance" : ["#fff6f6", "#ffc3c3"],
 	"My_Time" : ["#AA00AA", "#33AAFF"],
 }
 

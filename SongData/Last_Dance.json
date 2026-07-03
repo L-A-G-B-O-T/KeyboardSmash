@@ -1,0 +1,16 @@
+{
+    "officialName": "Last Dance",
+    "songAuthor": "Xomu",
+    "difficulty": "hard",
+    "goal": 99999999,
+    "settings": {
+        "colorStyle": "radialGradient",
+        "textColor": "#222222",
+        "strokeColor": "#222222",
+        "glowColor": "#444444",
+        "msPerBeat": 342.85714285714 
+    },
+    "lyrics": [],
+    "events": [],
+    "keys": []
+}
