@@ -2,11 +2,11 @@
     "officialName": "Living Mice",
     "songAuthor": "C418",
     "difficulty": "normal",
-    "goal": 99999999,
+    "goal": 28000,
     "settings": {
         "colorStyle": "verticalGradient",
         "textColor": "#21211a",
-        "strokeColor": "#21211a",
+        "strokeColor": "#4a3122",
         "glowColor": "#FFDDDD",
         "msPerBeat": 400
     },
@@ -366,10 +366,10 @@
             "speed": 0.7
         },
         {
-            "symbol": "s",
+            "symbol": "a",
             "endBeats": 72,
             "duration": 0,
-            "color1": "#82CE00",
+            "color1": "#06FF06",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -784,16 +784,32 @@
         {
             "symbol": "s",
             "endBeats": 128,
-            "duration": 1,
+            "duration": 0,
             "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 128,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "d",
             "endBeats": 129,
-            "duration": 1,
+            "duration": 0.5,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 129.5,
+            "duration": 0.5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -808,16 +824,48 @@
         {
             "symbol": "f",
             "endBeats": 131,
-            "duration": 2,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "h",
+            "endBeats": 131,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 132,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "g",
             "endBeats": 133,
-            "duration": 3,
+            "duration": 0,
             "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 133,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 134,
+            "duration": 2,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -832,8 +880,16 @@
         {
             "symbol": "d",
             "endBeats": 137,
-            "duration": 1,
+            "duration": 0,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 137,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -848,48 +904,104 @@
         {
             "symbol": "f",
             "endBeats": 139,
-            "duration": 5,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 139,
+            "duration": 5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "s",
             "endBeats": 144,
-            "duration": 1,
+            "duration": 0,
             "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 144,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "d",
             "endBeats": 145,
-            "duration": 1,
+            "duration": 0.5,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 145.5,
+            "duration": 0.5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "g",
             "endBeats": 146,
-            "duration": 1,
+            "duration": 0,
             "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "h",
+            "endBeats": 146,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "f",
             "endBeats": 147,
-            "duration": 2,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 147,
+            "duration": 2,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "g",
             "endBeats": 149,
-            "duration": 3,
+            "duration": 0,
             "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 149,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 150,
+            "duration": 2,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -904,8 +1016,16 @@
         {
             "symbol": "d",
             "endBeats": 153,
-            "duration": 1,
+            "duration": 0,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 153,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -920,24 +1040,48 @@
         {
             "symbol": "f",
             "endBeats": 155,
-            "duration": 5,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 155,
+            "duration": 5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "s",
             "endBeats": 160,
-            "duration": 1,
+            "duration": 0,
             "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 160,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "d",
             "endBeats": 161,
-            "duration": 1,
+            "duration": 0.5,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 161.5,
+            "duration": 0.5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -952,16 +1096,48 @@
         {
             "symbol": "f",
             "endBeats": 163,
-            "duration": 2,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "h",
+            "endBeats": 163,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 164,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "g",
             "endBeats": 165,
-            "duration": 3,
+            "duration": 0,
             "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 165,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 166,
+            "duration": 2,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -976,8 +1152,16 @@
         {
             "symbol": "d",
             "endBeats": 169,
-            "duration": 1,
+            "duration": 0,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 169,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -992,48 +1176,104 @@
         {
             "symbol": "f",
             "endBeats": 171,
-            "duration": 5,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 171,
+            "duration": 5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "s",
             "endBeats": 176,
-            "duration": 1,
+            "duration": 0,
             "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 176,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "d",
             "endBeats": 177,
-            "duration": 1,
+            "duration": 0.5,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 177.5,
+            "duration": 0.5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "g",
             "endBeats": 178,
-            "duration": 1,
+            "duration": 0,
             "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "h",
+            "endBeats": 178,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "f",
             "endBeats": 179,
-            "duration": 2,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 179,
+            "duration": 2,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "g",
             "endBeats": 181,
-            "duration": 3,
+            "duration": 0,
             "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 181,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 182,
+            "duration": 2,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1048,8 +1288,16 @@
         {
             "symbol": "d",
             "endBeats": 185,
-            "duration": 1,
+            "duration": 0,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 185,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1064,16 +1312,32 @@
         {
             "symbol": "f",
             "endBeats": 187,
-            "duration": 5,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 187,
+            "duration": 5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "s",
             "endBeats": 192,
-            "duration": 1,
+            "duration": 0,
             "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 192,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1104,8 +1368,24 @@
         {
             "symbol": "g",
             "endBeats": 197,
-            "duration": 3,
+            "duration": 0,
             "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 197,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 198,
+            "duration": 2,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1120,8 +1400,16 @@
         {
             "symbol": "d",
             "endBeats": 201,
-            "duration": 1,
+            "duration": 0,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 201,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1136,8 +1424,16 @@
         {
             "symbol": "f",
             "endBeats": 203,
-            "duration": 5,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 203,
+            "duration": 5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1176,8 +1472,24 @@
         {
             "symbol": "g",
             "endBeats": 213,
-            "duration": 3,
+            "duration": 0,
             "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 213,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 214,
+            "duration": 2,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1192,8 +1504,16 @@
         {
             "symbol": "d",
             "endBeats": 217,
-            "duration": 1,
+            "duration": 0,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 217,
+            "duration": 1,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1208,152 +1528,256 @@
         {
             "symbol": "f",
             "endBeats": 219,
-            "duration": 5,
+            "duration": 0,
             "color1": "#FF0606",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "s",
+            "symbol": "k",
+            "endBeats": 219,
+            "duration": 5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "w",
             "endBeats": 224,
             "duration": 1,
-            "color1": "#82CE00",
+            "color1": "#E80059",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "d",
+            "symbol": "e",
             "endBeats": 225,
             "duration": 1,
-            "color1": "#CE8400",
+            "color1": "#AC00AC",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "g",
+            "symbol": "t",
             "endBeats": 226,
             "duration": 1,
-            "color1": "#AC00AC",
+            "color1": "#0082CE",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "f",
+            "symbol": "r",
             "endBeats": 227,
             "duration": 2,
-            "color1": "#FF0606",
+            "color1": "#2E00F9",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "g",
+            "symbol": "t",
             "endBeats": 229,
             "duration": 3,
-            "color1": "#AC00AC",
+            "color1": "#0082CE",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "s",
+            "symbol": "w",
             "endBeats": 232,
             "duration": 1,
-            "color1": "#82CE00",
+            "color1": "#E80059",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "d",
+            "symbol": "e",
             "endBeats": 233,
             "duration": 1,
-            "color1": "#CE8400",
+            "color1": "#AC00AC",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "g",
+            "symbol": "t",
             "endBeats": 234,
             "duration": 1,
-            "color1": "#AC00AC",
+            "color1": "#0082CE",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "f",
+            "symbol": "r",
             "endBeats": 235,
             "duration": 5,
-            "color1": "#FF0606",
+            "color1": "#2E00F9",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "s",
+            "symbol": "w",
+            "endBeats": 240,
+            "duration": 0,
+            "color1": "#2E00F9",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "y",
             "endBeats": 240,
             "duration": 1,
-            "color1": "#82CE00",
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "d",
+            "symbol": "e",
+            "endBeats": 241,
+            "duration": 0,
+            "color1": "#002EF9",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "u",
             "endBeats": 241,
             "duration": 1,
-            "color1": "#CE8400",
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "g",
+            "symbol": "t",
+            "endBeats": 242,
+            "duration": 0,
+            "color1": "#06FF06",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "o",
             "endBeats": 242,
             "duration": 1,
-            "color1": "#AC00AC",
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "f",
+            "symbol": "r",
+            "endBeats": 243,
+            "duration": 0,
+            "color1": "#00ACAC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "i",
             "endBeats": 243,
             "duration": 2,
-            "color1": "#FF0606",
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "g",
+            "symbol": "t",
+            "endBeats": 245,
+            "duration": 0,
+            "color1": "#06FF06",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "o",
             "endBeats": 245,
             "duration": 3,
-            "color1": "#AC00AC",
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "s",
+            "symbol": "w",
+            "endBeats": 248,
+            "duration": 0,
+            "color1": "#2E00F9",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "u",
             "endBeats": 248,
             "duration": 1,
-            "color1": "#82CE00",
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "d",
+            "symbol": "e",
+            "endBeats": 249,
+            "duration": 0,
+            "color1": "#002EF9",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "i",
             "endBeats": 249,
             "duration": 1,
-            "color1": "#CE8400",
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "g",
+            "symbol": "t",
+            "endBeats": 250,
+            "duration": 0,
+            "color1": "#06FF06",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "o",
             "endBeats": 250,
             "duration": 1,
-            "color1": "#AC00AC",
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
-            "symbol": "f",
+            "symbol": "r",
             "endBeats": 251,
-            "duration": 5,
-            "color1": "#FF0606",
+            "duration": 0,
+            "color1": "#00ACAC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "i",
+            "endBeats": 251,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "i",
+            "endBeats": 252,
+            "duration": 2,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "o",
+            "endBeats": 254,
+            "duration": 2,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "p",
+            "endBeats": 256,
+            "duration": 0,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1368,8 +1792,16 @@
         {
             "symbol": "d",
             "endBeats": 257,
-            "duration": 1,
+            "duration": 0.5,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 257.5,
+            "duration": 0.5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1384,16 +1816,48 @@
         {
             "symbol": "f",
             "endBeats": 259,
-            "duration": 2,
+            "duration": 0,
             "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 259,
+            "duration": 1.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 260.5,
+            "duration": 0.5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
         {
             "symbol": "g",
             "endBeats": 261,
-            "duration": 3,
+            "duration": 1,
             "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ",",
+            "endBeats": 262,
+            "duration": 2,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "p",
+            "endBeats": 264,
+            "duration": 0,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1408,8 +1872,16 @@
         {
             "symbol": "d",
             "endBeats": 265,
-            "duration": 1,
+            "duration": 0.5,
             "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 265.5,
+            "duration": 0.5,
+            "color1": "#794c36",
             "color2": "#794c36",
             "speed": 0.7
         },
@@ -1424,6 +1896,918 @@
         {
             "symbol": "f",
             "endBeats": 267,
+            "duration": 0,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "m",
+            "endBeats": 267,
+            "duration": 0,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 267,
+            "duration": 5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "p",
+            "endBeats": 272,
+            "duration": 0,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 272,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 273,
+            "duration": 0.5,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 273.5,
+            "duration": 0.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 274,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 275,
+            "duration": 0,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 275,
+            "duration": 1.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 276.5,
+            "duration": 0.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 277,
+            "duration": 0,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ",",
+            "endBeats": 277,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "m",
+            "endBeats": 278,
+            "duration": 2,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "p",
+            "endBeats": 280,
+            "duration": 0,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 280,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 281,
+            "duration": 0.5,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 281.5,
+            "duration": 0.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 282,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 283,
+            "duration": 0,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 283,
+            "duration": 5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "p",
+            "endBeats": 288,
+            "duration": 0,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 288,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 289,
+            "duration": 0.5,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 289.5,
+            "duration": 0.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 290,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 291,
+            "duration": 0,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 291,
+            "duration": 1.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 292.5,
+            "duration": 0.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 293,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ",",
+            "endBeats": 294,
+            "duration": 2,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "p",
+            "endBeats": 296,
+            "duration": 0,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 296,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 297,
+            "duration": 0.5,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 297.5,
+            "duration": 0,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 297.5,
+            "duration": 0.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 298,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 299,
+            "duration": 0,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "m",
+            "endBeats": 299,
+            "duration": 0,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 299,
+            "duration": 5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "p",
+            "endBeats": 304,
+            "duration": 0,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 304,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 305,
+            "duration": 0.5,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 305.5,
+            "duration": 0.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 306,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 307,
+            "duration": 0,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 307,
+            "duration": 1.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ".",
+            "endBeats": 308.5,
+            "duration": 0.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 309,
+            "duration": 0,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ",",
+            "endBeats": 309,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "m",
+            "endBeats": 310,
+            "duration": 2,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "p",
+            "endBeats": 312,
+            "duration": 0,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 312,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 313,
+            "duration": 0.5,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 313.5,
+            "duration": 0.5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 314,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 315,
+            "duration": 0,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "/",
+            "endBeats": 315,
+            "duration": 5,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 320,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 321,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 322,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 323,
+            "duration": 2,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 325,
+            "duration": 0,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": ";",
+            "endBeats": 325,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 326,
+            "duration": 2,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 328,
+            "duration": 0,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 328,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 329,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 330,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 331,
+            "duration": 4,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "h",
+            "endBeats": 335,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 336,
+            "duration": 0,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "j",
+            "endBeats": 336,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 337,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 338,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 339,
+            "duration": 2,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 341,
+            "duration": 0,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "l",
+            "endBeats": 341,
+            "duration": 1,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "k",
+            "endBeats": 342,
+            "duration": 2,
+            "color1": "#794c36",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 344,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 345,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 346,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 347,
+            "duration": 5,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 352,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 353,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 354,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 355,
+            "duration": 2,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 357,
+            "duration": 3,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 360,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 361,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 362,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 363,
+            "duration": 5,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 368,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 369,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 370,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 371,
+            "duration": 2,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 373,
+            "duration": 3,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 376,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 377,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 378,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 379,
+            "duration": 5,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 384,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 385,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 386,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 387,
+            "duration": 2,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 389,
+            "duration": 11,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 400,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 401,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 402,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 403,
+            "duration": 2,
+            "color1": "#FF0606",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 405,
+            "duration": 3,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "s",
+            "endBeats": 408,
+            "duration": 1,
+            "color1": "#82CE00",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "d",
+            "endBeats": 409,
+            "duration": 1,
+            "color1": "#CE8400",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "g",
+            "endBeats": 410,
+            "duration": 1,
+            "color1": "#AC00AC",
+            "color2": "#794c36",
+            "speed": 0.7
+        },
+        {
+            "symbol": "f",
+            "endBeats": 411,
             "duration": 1,
             "color1": "#FF0606",
             "color2": "#794c36",
