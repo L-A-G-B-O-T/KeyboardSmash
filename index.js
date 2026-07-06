@@ -282,8 +282,8 @@ let songOrder = [
 	"Field_of_Memories",
 	"blank",
 	"Living_Mice", 
+	"My_Time",
 	"Last_Dance", 
-	"My_Time", 
 ];
 
 const highScores = {};
@@ -1191,6 +1191,7 @@ class Game {
 				this.exportFile();
 				this.ended = true;
 				this.songfile.currentTime = this.songfile.duration;
+				this.keyboard.clear();
 			}
 		} else {
 			if (keyboardPress['4']){
@@ -1280,10 +1281,17 @@ class Keyboard {
 		}
 	}
 	exportKeys(){//used in editing, export as .json file. this will not work outside an editing environment
+		//remove any duplicate keys from the song
 		let newSong = [];
 		for (const btn of this.buttons){
-			for (const key of btn.keys){
+			btn.keys.sort((a, b) => a.endBeats - b.endBeats);
+			for (let i = 0; i < btn.keys.length; i++){
+				const key = btn.keys[i];
 				if (key.deleteself) continue;
+				
+				if (btn.keys[i + 1] !== undefined && btn.keys[i + 1].endBeats == key.endBeats){
+					continue;
+				}
 				let note = {
 					symbol : btn.c,
 					endBeats : key.endBeats, 
@@ -1299,8 +1307,12 @@ class Keyboard {
 		for (let i = 0; i < newSong.length - 1; i++){
 			newSong[i].duration = newSong[i+1].endBeats - newSong[i].endBeats;
 		}
-		console.log(newSong);
 		return newSong;
+	}
+	clear(){
+		for (const btn of this.buttons){
+			btn.clear();
+		}
 	}
 }
 
@@ -1461,6 +1473,9 @@ class KeyButton {
 			this.pressed = false;
 			this.pressedSuccessfully = false;
 		}
+	}
+	clear(){
+		this.keys = [];
 	}
 }
 
@@ -1629,8 +1644,9 @@ const difficulties = {
 	"Field_of_Memories" : "hard",
 	"blank" : "customized",
 	"Living_Mice" : "normal", 
-	"Last_Dance" : "hard",
-	"My_Time" : "very hard",
+	"My_Time" : "hard", 
+	"Last_Dance" : "very hard", 
+	
 };
 
 const backgroundColors = {
